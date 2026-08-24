@@ -233,7 +233,8 @@ jobs:
           ./Configure \
             --prefix="$PREFIX" \
             --libdir=lib \
-            no-tests
+            no-tests \
+            no-shared
 
           make -j2
 
