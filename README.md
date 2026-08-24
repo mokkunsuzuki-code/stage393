@@ -1,93 +1,216 @@
-<!-- STAGE391_EXTERNAL_ASSESSOR_FRONTDOOR_START -->
+<!-- STAGE392_WYCHEPROOF_FRONTDOOR_START -->
 
-# QSP Stage391
+# QSP Stage392
 
-## Independent Third-Party Reproduction Verification & Assessment Adjudication Gate
+## External ML-DSA Test-Vector Conformance & Cross-Implementation Verification Gate
 
-**第三者独立再現検証・外部評価判定ゲート**
+**外部ML-DSAテストベクトル適合・複数実装交差検証ゲート**
 
-Stage391 is the current public verification stage of QSP.
+Stage392 extends the existing QSP ML-DSA cross-implementation verification path with externally sourced Wycheproof ML-DSA-65 verification vectors.
 
-Current decision:
+Current canonical decision:
 
-`third_party_submission_pending`
+`wycheproof_mldsa65_cross_implementation_verified`
 
 Verification status:
 
-`waiting_for_external_submission`
+`verified`
 
-Submission present:
+## What Stage392 Verifies
 
-`false`
+Stage392 executes the fixed Wycheproof ML-DSA-65 verification-vector set against two independently developed cryptographic implementations:
 
-External assessment completed:
+- OpenSSL 3.6.3 using the EVP API
+- Cloudflare CIRCL v1.6.5
 
-`false`
+Fixed Wycheproof source:
 
-Verified third-party agreement:
+- repository: `C2SP/wycheproof`
+- commit: `dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166`
+- vector file: `testvectors_v1/mldsa_65_verify_test.json`
+- vector SHA-256: `49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02`
 
-`false`
+Verified execution:
 
-Verified third-party disagreement:
+- total vectors: `210`
+- valid vectors: `79`
+- invalid vectors: `131`
+- passed vectors: `210`
+- failed vectors: `0`
+- OpenSSL valid accepts: `79 / 79`
+- CIRCL valid accepts: `79 / 79`
+- OpenSSL invalid rejects: `131 / 131`
+- CIRCL invalid rejects: `131 / 131`
+- cross-implementation accept/reject matches: `210 / 210`
+- cross-implementation mismatches: `0`
+- adapter execution errors: `0`
+- unexpected valid rejections: `0`
+- unexpected invalid acceptances: `0`
 
-`false`
+## Why Stage392 Adds Evidence Beyond Stage387
 
-Stage391 does not claim certification, formal external assessment completion, system-wide formal acceptance, complete quantum safety, or completed Stage389 dual timestamp verification.
+Stage387 verified one historical QSP ML-DSA-65 artifact across OpenSSL and Cloudflare CIRCL.
+
+Stage392 adds an externally sourced test-vector layer.
+
+Instead of testing only one successful signature, Stage392 checks expected accept/reject behavior across 210 ML-DSA-65 verification cases, including valid signatures, malformed inputs, boundary conditions, modified signatures, invalid contexts, key-length violations, signature-length violations, invalid hint encodings, and infinity-norm violations.
+
+This is additional verification evidence.
+
+It is not a formal proof of ML-DSA correctness or complete FIPS 204 conformance.
+
+## Deterministic Byte-for-Byte Reproduction
+
+Public reproduction runner:
+
+`development/stage392/run_stage392_wycheproof_mldsa65.py`
+
+The runner executes all 210 fixed vectors against OpenSSL and CIRCL and regenerates the canonical full-execution artifact.
+
+Canonical full-execution SHA-256:
+
+`1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314`
+
+The reproduced JSON was verified with both SHA-256 comparison and byte-for-byte comparison to be identical to the historical canonical execution artifact.
+
+Repeated execution also produced the same SHA-256.
+
+Reproduction runner SHA-256:
+
+`3a7faaa4a20526ea40a81c78590232ce39bf3fc66187dc0dc8bbf7e45eae206a`
+
+## Canonical Stage392 Bindings
+
+Canonical result SHA-256:
+
+`c44ad9053429f8a8b36f6739af5982736abd98ea4860bddc3c0e1c216ca6633c`
+
+Evidence manifest SHA-256:
+
+`b1e976a9d1b0e1f7305144921a28ad7acff4d3adbe946c13d41b8ba9e2a82e71`
+
+Tooling manifest SHA-256:
+
+`8d4646ba5e6088281f53cd44198c849213dd3cd407bf234011b4e01fadcf324e`
+
+Reproduction manifest SHA-256:
+
+`8b0e1fe2cbec99d31d2e1a46296dd4d64f836bfa3e6954f43bac8baabd099d7a`
+
+## Deterministic Verification
+
+Canonical verifier:
+
+`development/stage392/verify_stage392_wycheproof.py`
+
+It checks fixed artifact hashes, Stage392 semantics, 210-vector execution counts, Wycheproof bindings, full-execution consistency, evidence-manifest integrity, and required non-claims.
+
+## Fail-Closed Regression
+
+Public regression suite:
+
+`development/stage392/test_stage392_fail_closed.py`
+
+Current result:
+
+- fixed-hash integrity layer: `12 / 12 PASS`
+- semantic consistency layer: `11 / 11 PASS`
+- total: `23 / 23 PASS`
+
+The suite rejects inconsistent or tampered success claims instead of silently promoting them.
+
+## GitHub Actions
+
+Stage392 includes:
+
+`.github/workflows/stage392-wycheproof-verification.yml`
+
+The workflow is prepared to:
+
+1. verify fixed Stage392 SHA-256 bindings,
+2. run the deterministic verifier,
+3. run the 23-case Fail-Closed regression suite,
+4. fetch the fixed Wycheproof commit,
+5. verify the fixed vector SHA-256,
+6. build OpenSSL 3.6.3 from the fixed source commit,
+7. build the CIRCL v1.6.5 adapter,
+8. execute all 210 ML-DSA-65 verification vectors,
+9. compare the regenerated result byte-for-byte with the canonical artifact,
+10. repeat the full reproduction for determinism.
+
+The workflow has been locally audited.
+
+A successful GitHub Actions execution is not claimed until the workflow is committed, pushed, executed, and observed successfully on GitHub.
+
+## External Feedback Provenance
+
+The Wycheproof verification layer was added after technical feedback received in Cloudflare CIRCL issue #691 recommending testing against the Wycheproof ML-DSA vectors.
+
+This is recorded as technical input only.
+
+QSP does not claim endorsement, approval, certification, or formal assessment by Cloudflare, CIRCL maintainers, Wycheproof, OpenSSF, PQCA, or another external organization.
 
 ## Important Upstream Status
 
-Stage390:
+Stage391 remains historically preserved.
 
-`third_party_assessment_ready`
-
-Stage389:
+Stage389 remains:
 
 `dual_timestamp_pending`
 
-Stage389 dual timestamp verified:
+Inherited Stage389 status includes:
 
-`false`
+- RFC3161 verification: `verified`
+- OpenTimestamps verification: `false`
+- dual timestamp verified: `false`
 
-Stage389 records RFC3161 verification as verified, while OpenTimestamps / Bitcoin verification remains pending.
+Stage392 does not promote the pending Stage389 state into a successful dual-timestamp claim.
 
-## Canonical Stage391 Result
+## What Stage392 Does Not Claim
 
-SHA-256:
+Stage392 does **not** claim:
 
-`ed644d11bd49f67f89cfda50364d619066b4da3a36bf1fb26b38e111b6092b23`
+- complete FIPS 204 conformance,
+- formal certification,
+- formal external assessment completion,
+- system-wide formal acceptance,
+- that the entire QSP system is quantum safe,
+- completed Stage389 dual timestamp verification,
+- that Wycheproof constitutes a formal proof,
+- endorsement by Cloudflare, CIRCL, Wycheproof, OpenSSF, PQCA, or another external organization.
 
-## For Independent Assessors
+The verified Stage392 result is scoped to the fixed ML-DSA-65 verification-vector execution and the recorded cross-implementation behavior.
 
-1. Clone the Stage391 repository.
-2. Checkout the exact assessment commit identified in the delivery package.
-3. Verify the published SHA-256 evidence.
-4. Record the independent execution environment.
-5. Run the Stage391 deterministic verifier.
-6. Run the Stage391 Fail-Closed regression suite.
-7. Compare reproduced results with the canonical published result.
-8. Record all critical mismatches.
-9. Complete the supplied `submission_template.json`.
-10. Return `agreement`, `disagreement`, or `incomplete`.
+## Core Public Stage392 Files
 
-Self-test or smoke-test by the QSP developer does not qualify as an independent third-party assessment.
-
-## Core Verification Files
-
-`development/stage391/verify_stage391_third_party_submission.py`
-
-`development/stage391/test_stage391_fail_closed.py`
-
-Current regression coverage:
-
-`16 / 16 PASS`
-
-Current positive classification coverage:
-
-`3 / 3 PASS`
+- `development/stage392/stage392_preimplementation_contract.json`
+- `development/stage392/stage392_adapter_contract.json`
+- `development/stage392/stage392_verification_result.json`
+- `development/stage392/stage392_verification_result.sha256`
+- `development/stage392/stage392_wycheproof_full_execution_result.json`
+- `development/stage392/stage392_wycheproof_full_execution_result.sha256`
+- `development/stage392/stage392_evidence_manifest.json`
+- `development/stage392/stage392_evidence_manifest.sha256`
+- `development/stage392/stage392_tooling_manifest.json`
+- `development/stage392/stage392_tooling_manifest.sha256`
+- `development/stage392/stage392_reproduction_manifest.json`
+- `development/stage392/stage392_reproduction_manifest.sha256`
+- `development/stage392/stage392_openssl_mldsa65_adapter.c`
+- `development/stage392/stage392_circl_mldsa65_adapter.go`
+- `development/stage392/go.mod`
+- `development/stage392/go.sum`
+- `development/stage392/verify_stage392_wycheproof.py`
+- `development/stage392/test_stage392_fail_closed.py`
+- `development/stage392/run_stage392_wycheproof_mldsa65.py`
+- `.github/workflows/stage392-wycheproof-verification.yml`
 
 ## Security / Publication Boundary
 
-No private core, private key, secret, credential, raw RFC3161 proof, raw OpenTimestamps proof, or raw QKD secret material is required or published.
+Stage392 preserves QSP's default-deny publication model.
+
+The public Stage392 verification path does not require publication of private core, private keys, seeds, credentials, authentication tokens, raw RFC3161 responses, raw OpenTimestamps proof material, or raw QKD secret material.
+
+Only explicitly approved verification artifacts are made Git-visible.
 
 ## License
 
@@ -99,7 +222,7 @@ MIT License
 
 The complete historical documentation is preserved below without deletion or replacement.
 
-<!-- STAGE391_EXTERNAL_ASSESSOR_FRONTDOOR_END -->
+<!-- STAGE392_WYCHEPROOF_FRONTDOOR_END -->
 
 <!-- STAGE383_ROOT_README_START -->
 # Stage383: Policy-Bound Recovery Orchestration & Formal Acceptance Eligibility Gate

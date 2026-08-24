@@ -1,0 +1,107 @@
+{
+  "algorithm": "ML-DSA-65",
+  "cross_implementation_semantics": {
+    "accept_reject_agreement_required": true,
+    "adapter_error_may_count_as_rejection": false,
+    "invalid_vector": {
+      "circl_must_reject": true,
+      "identical_internal_rejection_class_required": false,
+      "openssl_must_reject": true
+    },
+    "valid_vector": {
+      "circl_must_accept": true,
+      "openssl_must_accept": true
+    }
+  },
+  "expected_result_semantics": {
+    "invalid": {
+      "accept_is_failure": true,
+      "adapter_execution_error_is_failure": true,
+      "allowed_rejection_states": [
+        "cryptographic_reject",
+        "public_key_parse_reject",
+        "context_parameter_reject"
+      ]
+    },
+    "valid": {
+      "adapter_execution_error_is_failure": true,
+      "any_reject_is_failure": true,
+      "required_final_state": "accept"
+    }
+  },
+  "fail_closed_conditions": [
+    "wycheproof_commit_mismatch",
+    "vector_sha256_mismatch",
+    "schema_mismatch",
+    "algorithm_mismatch",
+    "test_count_mismatch",
+    "missing_vector_result",
+    "malformed_vector_data",
+    "openssl_execution_failure",
+    "circl_execution_failure",
+    "adapter_execution_error",
+    "unexpected_valid_rejection",
+    "unexpected_invalid_acceptance",
+    "cross_implementation_accept_reject_mismatch"
+  ],
+  "implementations": {
+    "circl": {
+      "context_transport": "binary_bytes",
+      "interface": "Go mldsa65 verifier",
+      "name": "Cloudflare CIRCL",
+      "required_version": "v1.6.5"
+    },
+    "openssl": {
+      "cli_pkeyutl_is_authoritative": false,
+      "context_limit_bytes": 255,
+      "context_transport": "binary_octet_string",
+      "interface": "EVP API",
+      "name": "OpenSSL",
+      "required_version": "3.6.3"
+    }
+  },
+  "non_claims": {
+    "complete_fips204_conformance": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "prototype_is_authoritative": false,
+    "stage389_dual_timestamp_verified": false,
+    "system_wide_formal_acceptance": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "prototype_evidence": {
+    "all_expected_results_matched": true,
+    "authoritative_stage392_result": false,
+    "result_sha256": "9d923b3141b4e453f281ec347cd22a366c8577544564a2b8ec50817097f322ee",
+    "step": "36M",
+    "tested_tcids": [
+      1,
+      3,
+      4,
+      5,
+      73,
+      153
+    ]
+  },
+  "purpose": "Define the exact result semantics for executing Wycheproof ML-DSA-65 verify vectors across OpenSSL and Cloudflare CIRCL.",
+  "result_classes": [
+    "accept",
+    "cryptographic_reject",
+    "public_key_parse_reject",
+    "context_parameter_reject",
+    "adapter_execution_error"
+  ],
+  "schema": "qsp.stage392.adapter-contract.v1",
+  "stage": 392,
+  "status": "preimplementation_contract",
+  "wycheproof_binding": {
+    "algorithm": "ML-DSA-65",
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "expected_invalid_count": 131,
+    "expected_test_count": 210,
+    "expected_valid_count": 79,
+    "repository": "C2SP/wycheproof",
+    "vector_file": "testvectors_v1/mldsa_65_verify_test.json",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  }
+}

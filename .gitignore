@@ -601,3 +601,28 @@ __pycache__/
 
 # Stage391 public GitHub Actions workflow
 !.github/workflows/stage391-third-party-reproduction-adjudication.yml
+
+# Stage392 External ML-DSA Test-Vector Conformance
+# Public files must be explicitly allowlisted.
+!development/stage392/
+development/stage392/*
+!development/stage392/stage392_preimplementation_contract.json
+!development/stage392/stage392_adapter_contract.json
+!development/stage392/stage392_openssl_mldsa65_adapter.c
+!development/stage392/stage392_circl_mldsa65_adapter.go
+!development/stage392/go.mod
+!development/stage392/go.sum
+!development/stage392/stage392_wycheproof_full_execution_result.json
+!development/stage392/stage392_wycheproof_full_execution_result.sha256
+!development/stage392/stage392_verification_result.json
+!development/stage392/stage392_verification_result.sha256
+!development/stage392/stage392_evidence_manifest.json
+!development/stage392/stage392_evidence_manifest.sha256
+!development/stage392/verify_stage392_wycheproof.py
+!development/stage392/test_stage392_fail_closed.py
+!development/stage392/stage392_tooling_manifest.json
+!development/stage392/stage392_tooling_manifest.sha256
+!development/stage392/run_stage392_wycheproof_mldsa65.py
+!development/stage392/stage392_reproduction_manifest.json
+!development/stage392/stage392_reproduction_manifest.sha256
+!.github/workflows/stage392-wycheproof-verification.yml

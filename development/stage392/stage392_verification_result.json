@@ -1,0 +1,105 @@
+{
+  "algorithm": "ML-DSA-65",
+  "checks": {
+    "adapter_execution_errors_absent": true,
+    "algorithm_verified": true,
+    "all_invalid_vectors_rejected_by_circl": true,
+    "all_invalid_vectors_rejected_by_openssl": true,
+    "all_valid_vectors_accepted_by_circl": true,
+    "all_valid_vectors_accepted_by_openssl": true,
+    "all_vectors_match_wycheproof_expected_result": true,
+    "cross_implementation_accept_reject_match": true,
+    "fail_closed": true,
+    "test_count_verified": true,
+    "wycheproof_commit_binding_verified": true,
+    "wycheproof_vector_sha256_verified": true
+  },
+  "circl_classification_distribution": {
+    "accept": 79,
+    "context_parameter_reject": 5,
+    "cryptographic_reject": 122,
+    "public_key_parse_reject": 4
+  },
+  "decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "external_feedback_provenance": {
+    "observed_feedback": "Wycheproof ML-DSA test vectors were recommended as useful test vectors.",
+    "project_endorsement_claimed": false,
+    "source": "cloudflare/circl issue #691"
+  },
+  "full_execution_evidence": {
+    "path": "development/stage392/stage392_wycheproof_full_execution_result.json",
+    "sha256": "1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314"
+  },
+  "implementations": {
+    "circl": {
+      "interface": "Go mldsa65 verifier",
+      "name": "Cloudflare CIRCL",
+      "version": "v1.6.5"
+    },
+    "openssl": {
+      "interface": "EVP API",
+      "name": "OpenSSL",
+      "version": "3.6.3"
+    }
+  },
+  "name": "External ML-DSA Test-Vector Conformance & Cross-Implementation Verification Gate",
+  "non_claims": {
+    "complete_fips204_conformance": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "stage389_dual_timestamp_verified": false,
+    "system_wide_formal_acceptance": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "openssl_classification_distribution": {
+    "accept": 79,
+    "context_parameter_reject": 5,
+    "cryptographic_reject": 122,
+    "public_key_parse_reject": 4
+  },
+  "publication_status": "prepared_not_yet_committed",
+  "schema": "qsp.stage392.verification-result.v1",
+  "scope": {
+    "external_mu_vectors": false,
+    "key_generation_vectors": false,
+    "mldsa65_verify_vectors": true,
+    "sign_noseed_vectors": false,
+    "sign_seed_vectors": false
+  },
+  "source_stage": 391,
+  "stage": 392,
+  "stage387_baseline": {
+    "canonical_result_sha256": "682a9aa96a7ec1eba9a0dea956971838a4ea222dd540adfc79f4776a6f0237d8",
+    "single_artifact_cross_implementation_verified": true
+  },
+  "stage391_binding": {
+    "canonical_result_sha256": "ed644d11bd49f67f89cfda50364d619066b4da3a36bf1fb26b38e111b6092b23",
+    "commit": "a74b7f47f8caabf37a910ea9f4da2b87c0cd5f15",
+    "preserved": true
+  },
+  "verification_counts": {
+    "adapter_execution_errors": 0,
+    "circl_invalid_rejects": 131,
+    "circl_valid_accepts": 79,
+    "cross_implementation_accept_reject_matches": 210,
+    "cross_implementation_accept_reject_mismatches": 0,
+    "failed_vectors": 0,
+    "invalid_vectors": 131,
+    "openssl_invalid_rejects": 131,
+    "openssl_valid_accepts": 79,
+    "passed_vectors": 210,
+    "total_vectors": 210,
+    "unexpected_invalid_acceptances": 0,
+    "unexpected_valid_rejections": 0,
+    "valid_vectors": 79
+  },
+  "verification_status": "verified",
+  "wycheproof_binding": {
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "repository": "C2SP/wycheproof",
+    "schema": "mldsa_verify_schema.json",
+    "vector_file": "testvectors_v1/mldsa_65_verify_test.json",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  }
+}

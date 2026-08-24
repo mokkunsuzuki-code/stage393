@@ -1,0 +1,84 @@
+{
+  "external_feedback_provenance": {
+    "claim": "Wycheproof ML-DSA test vectors were recommended as useful test vectors.",
+    "does_not_mean_project_endorsement": true,
+    "source": "cloudflare/circl issue #691"
+  },
+  "fail_closed_conditions": [
+    "wycheproof_commit_mismatch",
+    "vector_sha256_mismatch",
+    "schema_mismatch",
+    "algorithm_mismatch",
+    "test_count_mismatch",
+    "unexpected_valid_rejection",
+    "unexpected_invalid_acceptance",
+    "openssl_execution_failure",
+    "circl_execution_failure",
+    "cross_implementation_result_mismatch",
+    "missing_vector_result",
+    "malformed_vector_data"
+  ],
+  "implementation_status": "not_yet_implemented",
+  "japanese_name": "\u5916\u90e8ML-DSA\u30c6\u30b9\u30c8\u30d9\u30af\u30c8\u30eb\u9069\u5408\u30fb\u8907\u6570\u5b9f\u88c5\u4ea4\u5dee\u691c\u8a3c\u30b2\u30fc\u30c8",
+  "name": "External ML-DSA Test-Vector Conformance & Cross-Implementation Verification Gate",
+  "non_claims": {
+    "complete_fips204_conformance": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "stage389_dual_timestamp_verified": false,
+    "system_wide_formal_acceptance": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "provisional_success_decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "purpose": "Extend Stage387 cross-implementation verification with externally sourced ML-DSA-65 verification test vectors while preserving Stage391 evidence.",
+  "required_verification": {
+    "circl_vector_execution_required": true,
+    "cross_implementation_vector_result_match_required": true,
+    "declared_test_count_verified": true,
+    "expected_result_checked_per_vector": true,
+    "invalid_vectors_must_reject": true,
+    "openssl_vector_execution_required": true,
+    "unexpected_accept_is_failure": true,
+    "unexpected_reject_is_failure": true,
+    "valid_vectors_must_accept": true,
+    "vector_commit_binding_verified": true,
+    "vector_sha256_verified": true
+  },
+  "schema": "qsp.stage392.preimplementation-contract.v1",
+  "scope": {
+    "external_mu_testing": false,
+    "key_generation_vectors": false,
+    "sign_noseed_vectors": false,
+    "sign_seed_vectors": false,
+    "verify_vectors": true
+  },
+  "source_stage": 391,
+  "stage": 392,
+  "stage387_baseline": {
+    "algorithm": "ML-DSA-65",
+    "cross_implementation_result_match": true,
+    "implementations": [
+      "OpenSSL",
+      "Cloudflare CIRCL"
+    ],
+    "same_context": true,
+    "same_public_key": true,
+    "same_signature": true,
+    "same_signed_target": true
+  },
+  "stage391_binding": {
+    "commit": "a74b7f47f8caabf37a910ea9f4da2b87c0cd5f15",
+    "must_remain_immutable": true
+  },
+  "wycheproof_binding": {
+    "algorithm": "ML-DSA-65",
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "expected_invalid_count": 131,
+    "expected_test_count": 210,
+    "expected_valid_count": 79,
+    "repository": "C2SP/wycheproof",
+    "schema": "mldsa_verify_schema.json",
+    "vector_file": "testvectors_v1/mldsa_65_verify_test.json",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "canonical_decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "canonical_output_binding": {
+    "path": "development/stage392/stage392_wycheproof_full_execution_result.json",
+    "sha256": "1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314"
+  },
+  "implementation_bindings": {
+    "circl": {
+      "adapter_source": {
+        "path": "development/stage392/stage392_circl_mldsa65_adapter.go",
+        "sha256": "a06fa8742fd78f84417e7f8a1cb75565eadab295c789bca0a2df40f22224b136"
+      },
+      "go_module": {
+        "go_mod_sha256": "9128f225e19fc2af310d2306491baf5fce63710748b2a39c70f745c8218fa8ce",
+        "go_sum_sha256": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980"
+      },
+      "name": "Cloudflare CIRCL",
+      "tested_version": "v1.6.5"
+    },
+    "openssl": {
+      "adapter_source": {
+        "path": "development/stage392/stage392_openssl_mldsa65_adapter.c",
+        "sha256": "1f0956a7213a62eb7099ba5791deb813c7d84edd7c8e8ee929d5becdda5bb334"
+      },
+      "interface": "EVP API",
+      "name": "OpenSSL",
+      "tested_version": "3.6.3"
+    }
+  },
+  "layer_separation": {
+    "canonical_evidence_manifest_modified": false,
+    "circular_hash_dependency": false,
+    "existing_tooling_manifest_modified": false,
+    "reproduction_manifest_separate": true
+  },
+  "non_claims": {
+    "complete_fips204_conformance": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "stage389_dual_timestamp_verified": false,
+    "system_wide_formal_acceptance": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "publication_boundary": {
+    "default_deny": true,
+    "explicit_allowlist_required": true,
+    "private_material_required_for_reproduction": false,
+    "secret_material_publication_allowed": false
+  },
+  "purpose": "Bind the public Stage392 reproduction runner and the fixed inputs required to regenerate the canonical Wycheproof ML-DSA-65 execution artifact byte-for-byte.",
+  "reproduction_result": {
+    "adapter_execution_errors": 0,
+    "byte_for_byte_match": true,
+    "cross_implementation_mismatches": 0,
+    "failed_vectors": 0,
+    "historical_sha256_match": true,
+    "invalid_vectors": 131,
+    "passed_vectors": 210,
+    "repeat_execution_deterministic": true,
+    "total_vectors": 210,
+    "valid_vectors": 79
+  },
+  "reproduction_runner": {
+    "path": "development/stage392/run_stage392_wycheproof_mldsa65.py",
+    "sha256": "3a7faaa4a20526ea40a81c78590232ce39bf3fc66187dc0dc8bbf7e45eae206a"
+  },
+  "reproduction_status": "byte_exact_reproduction_verified",
+  "schema": "qsp.stage392.reproduction-manifest.v1",
+  "source_stage": 391,
+  "stage": 392,
+  "status": "verified_reproduction_runner_ready_for_ci",
+  "wycheproof_binding": {
+    "algorithm": "ML-DSA-65",
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "repository": "C2SP/wycheproof",
+    "vector_file": "testvectors_v1/mldsa_65_verify_test.json",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  }
+}

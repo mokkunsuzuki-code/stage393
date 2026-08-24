@@ -1,0 +1,81 @@
+{
+  "artifact_count": 10,
+  "artifacts": [
+    {
+      "path": "development/stage392/stage392_preimplementation_contract.json",
+      "role": "preimplementation_contract",
+      "sha256": "f6a8cbfd952992398feb51e06b7640b3cabd91b4718a2867495004518bf2e706",
+      "size_bytes": 3131
+    },
+    {
+      "path": "development/stage392/stage392_adapter_contract.json",
+      "role": "adapter_contract",
+      "sha256": "a649897d1e6d00202a2ba79ffb766462e712c6bacc35d9c0344fd38ba0b8a62a",
+      "size_bytes": 3190
+    },
+    {
+      "path": "development/stage392/stage392_openssl_mldsa65_adapter.c",
+      "role": "openssl_evp_adapter_source",
+      "sha256": "1f0956a7213a62eb7099ba5791deb813c7d84edd7c8e8ee929d5becdda5bb334",
+      "size_bytes": 4851
+    },
+    {
+      "path": "development/stage392/stage392_circl_mldsa65_adapter.go",
+      "role": "circl_adapter_source",
+      "sha256": "a06fa8742fd78f84417e7f8a1cb75565eadab295c789bca0a2df40f22224b136",
+      "size_bytes": 1921
+    },
+    {
+      "path": "development/stage392/go.mod",
+      "role": "circl_go_module",
+      "sha256": "9128f225e19fc2af310d2306491baf5fce63710748b2a39c70f745c8218fa8ce",
+      "size_bytes": 73
+    },
+    {
+      "path": "development/stage392/go.sum",
+      "role": "circl_go_dependency_lock",
+      "sha256": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980",
+      "size_bytes": 326
+    },
+    {
+      "path": "development/stage392/stage392_wycheproof_full_execution_result.json",
+      "role": "full_vector_execution_evidence",
+      "sha256": "1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314",
+      "size_bytes": 189077
+    },
+    {
+      "path": "development/stage392/stage392_wycheproof_full_execution_result.sha256",
+      "role": "full_vector_execution_sha256_record",
+      "sha256": "1c3977cddaa7ebb653f8ad5527541f0b78ede422ed8ee79a4124b3432970108b",
+      "size_bytes": 113
+    },
+    {
+      "path": "development/stage392/stage392_verification_result.json",
+      "role": "canonical_stage392_result",
+      "sha256": "c44ad9053429f8a8b36f6739af5982736abd98ea4860bddc3c0e1c216ca6633c",
+      "size_bytes": 3699
+    },
+    {
+      "path": "development/stage392/stage392_verification_result.sha256",
+      "role": "canonical_stage392_result_sha256_record",
+      "sha256": "3e3d046f62877d99b6c913996b5b89dceefe4441b14f8f9a9eeac201355728cf",
+      "size_bytes": 100
+    }
+  ],
+  "canonical_result": "development/stage392/stage392_verification_result.json",
+  "decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "external_source_binding": {
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "repository": "C2SP/wycheproof",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  },
+  "publication_boundary": {
+    "private_core_included": false,
+    "private_keys_included": false,
+    "raw_qkd_secret_included": false,
+    "raw_timestamp_private_proof_included": false,
+    "secrets_included": false
+  },
+  "schema": "qsp.stage392.evidence-manifest.v1",
+  "stage": 392
+}

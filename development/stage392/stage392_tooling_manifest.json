@@ -1,0 +1,62 @@
+{
+  "canonical_decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "canonical_evidence": {
+    "evidence_manifest": {
+      "path": "development/stage392/stage392_evidence_manifest.json",
+      "sha256": "b1e976a9d1b0e1f7305144921a28ad7acff4d3adbe946c13d41b8ba9e2a82e71"
+    },
+    "full_execution_result": {
+      "path": "development/stage392/stage392_wycheproof_full_execution_result.json",
+      "sha256": "1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314"
+    },
+    "verification_result": {
+      "path": "development/stage392/stage392_verification_result.json",
+      "sha256": "c44ad9053429f8a8b36f6739af5982736abd98ea4860bddc3c0e1c216ca6633c"
+    }
+  },
+  "non_claims": {
+    "complete_fips204_conformance": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "stage389_dual_timestamp_verified": false,
+    "system_wide_formal_acceptance": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "publication_boundary": {
+    "default_deny": true,
+    "explicit_allowlist_required": true,
+    "private_core_publication_allowed": false,
+    "secret_material_publication_allowed": false
+  },
+  "purpose": "Bind the deterministic Stage392 verifier and Fail-Closed regression suite without modifying the canonical Stage392 evidence manifest.",
+  "schema": "qsp.stage392.tooling-manifest.v1",
+  "separation_model": {
+    "canonical_evidence_manifest_modified": false,
+    "circular_hash_dependency": false,
+    "tooling_manifest_separate": true
+  },
+  "source_stage": 391,
+  "stage": 392,
+  "status": "verified_tooling_ready_for_ci",
+  "tooling": {
+    "deterministic_verifier": {
+      "path": "development/stage392/verify_stage392_wycheproof.py",
+      "sha256": "8b0b5cb056b26b6777f7abfdd68ee2d1916c9500b53bda2f96e1715fd05df947",
+      "verified": true
+    },
+    "fail_closed_regression_suite": {
+      "all_mutations_rejected": true,
+      "path": "development/stage392/test_stage392_fail_closed.py",
+      "sha256": "bb30dbda1da488b1d34f6c7d03dec142da21d9e75b1ce2ceaf261ac44ba3b865",
+      "test_counts": {
+        "failed": 0,
+        "fixed_hash_binding": 12,
+        "passed": 23,
+        "semantic_validation": 11,
+        "total": 23
+      },
+      "verified": true
+    }
+  }
+}
