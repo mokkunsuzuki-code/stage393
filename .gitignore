@@ -626,3 +626,16 @@ development/stage392/*
 !development/stage392/stage392_reproduction_manifest.json
 !development/stage392/stage392_reproduction_manifest.sha256
 !.github/workflows/stage392-wycheproof-verification.yml
+
+# Stage393 public executable contract
+!development/stage393/
+development/stage393/*
+!development/stage393/stage393_executable_contract.json
+!development/stage393/stage393_executable_contract.sha256
+!development/stage393/stage393_circl_fixedrnd_harness_test.go
+!development/stage393/stage393_openssl_mldsa65_verifier.c
+!development/stage393/run_stage393_deterministic_fixedrnd.py
+
+# Stage393 canonical public execution evidence
+!development/stage393/stage393_execution_result.json
+!development/stage393/stage393_execution_result.sha256

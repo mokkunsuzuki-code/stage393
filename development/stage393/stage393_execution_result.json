@@ -1,0 +1,42 @@
+{
+  "algorithm": "ML-DSA-65",
+  "artifact_sizes": {
+    "context": 12,
+    "message": 45,
+    "raw_public_key": 1952,
+    "signature": 3309
+  },
+  "canonical_sha256": {
+    "context": "235c15e32ba5fb5fe35be31d1fe62a4608509b87db79d1889065e773128878ac",
+    "fixed_randomness": "d9c98c32e905f4c26047488561ff4f731e0fcdc4aa76ecb85a2471280be94d7d",
+    "message": "5eb05bcca245aeed44ac509eebebf6dfc3d6f8ca6df3bd904a3f2ef61e55108b",
+    "public_key": "4b6344efa2eac5ef445c8e2e3b9a40f0f99898cd014b101b2564af5914b74dbb",
+    "signature": "3541d38f63c430d07e130c7597bafed7bf6d82bf64fee6e216761dc58c14c231",
+    "test_seed": "e6cd07175fba11ec6c98597a3fd82e73de3d13096e4a050e51e651468414dfe6"
+  },
+  "circl_version": "v1.6.5",
+  "contract_revision": 2,
+  "contract_sha256": "76fe922c3fc01f34bd13af0392c68105fd51fb692adda6512fb431fafd9653b5",
+  "decision": "mldsa65_deterministic_fixed_randomness_cross_implementation_verified",
+  "execution": {
+    "circl_public_verification": true,
+    "cross_execution_public_key_byte_equality": true,
+    "cross_execution_signature_byte_equality": true,
+    "openssl_verification_run1": true,
+    "openssl_verification_run2": true,
+    "repeat_signature_byte_equality": true,
+    "separate_execution_count": 2
+  },
+  "fixture_classification": "public_non_secret_deterministic_test_fixture",
+  "safety_boundary": {
+    "external_mu_tested": false,
+    "openssl_fixed_randomness_signing": false,
+    "private_key_persisted": false,
+    "production_key_material": false,
+    "raw_fixed_randomness_persisted": false,
+    "raw_test_seed_persisted": false
+  },
+  "schema": "qsp.stage393.deterministic-fixed-randomness-execution.v1",
+  "source_stage": 392,
+  "stage": 393
+}

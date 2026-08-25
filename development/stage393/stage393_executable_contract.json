@@ -1,0 +1,191 @@
+{
+  "schema": "qsp.stage393.executable-contract.v1",
+  "stage": 393,
+  "source_stage": 392,
+  "source_git_commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+  "name": "ML-DSA-65 Deterministic Fixed-Randomness Signing Conformance & Cross-Implementation Verification Gate",
+  "japanese_name": "ML-DSA-65 決定論的固定乱数署名適合・複数実装交差検証ゲート",
+  "status": "contract_frozen_preimplementation_determinism_amended",
+  "purpose": "Extend Stage392 without modifying its evidence by deriving a deterministic non-production ML-DSA-65 test keypair from a public non-secret runtime fixture, signing with explicitly controlled fixed randomness through the CIRCL v1.6.5 test-only internal compatibility path, proving byte-identical public-key and signature reproduction across separate executions, and independently verifying the generated signature with both Cloudflare CIRCL and OpenSSL.",
+  "algorithm": "ML-DSA-65",
+  "scope": {
+    "ml_dsa_65_execution": true,
+    "ml_dsa_44_execution": false,
+    "ml_dsa_87_execution": false,
+    "fixed_randomness_signing_test": true,
+    "circl_fixed_randomness_capability": true,
+    "openssl_fixed_randomness_signing_claim": false,
+    "cross_implementation_verification": true,
+    "circl_verification_required": true,
+    "openssl_verification_required": true,
+    "external_mu_testing": false,
+    "external_mu_execution": false,
+    "external_mu_claim": false,
+    "deterministic_non_secret_test_seed": true,
+    "cross_execution_public_key_byte_equality": true,
+    "cross_execution_signature_byte_equality": true,
+    "cross_execution_byte_identical_evidence": true
+  },
+  "implementation_contract": {
+    "circl": {
+      "version": "v1.6.5",
+      "role": [
+        "fixed_randomness_test_signer",
+        "independent_verifier"
+      ],
+      "fixed_randomness_path_classification": "test_only_internal_compatibility_path",
+      "public_supported_fixed_randomness_api_claimed": false,
+      "production_api_claimed": false,
+      "deterministic_key_derivation_api": "NewKeyFromSeed",
+      "test_seed_classification": "public_non_secret_runtime_derived_fixture",
+      "raw_test_seed_persisted": false
+    },
+    "openssl": {
+      "role": [
+        "independent_verifier"
+      ],
+      "fixed_randomness_signer_role": false,
+      "external_mu_role": false
+    }
+  },
+  "execution_semantics": {
+    "single_ephemeral_test_keypair_per_case": true,
+    "same_private_key_same_message_same_context_same_fixed_randomness_must_produce_identical_signature": true,
+    "generated_signature_must_verify_with_circl": true,
+    "generated_signature_must_verify_with_openssl": true,
+    "cross_implementation_signature_generation_equality_required": false,
+    "stage392_canonical_result_must_not_be_modified": true,
+    "stage392_evidence_must_remain_immutable": true,
+    "deterministic_test_keypair_rederived_per_execution": true,
+    "cross_execution_public_key_byte_equality_required": true,
+    "cross_execution_signature_byte_equality_required": true,
+    "canonical_fixture_hashes_must_match": true,
+    "raw_test_seed_must_not_be_persisted": true,
+    "raw_fixed_randomness_must_not_be_persisted": true
+  },
+  "secret_material_boundary": {
+    "private_key_must_not_be_committed": true,
+    "private_seed_must_not_be_committed": true,
+    "private_key_must_not_be_published": true,
+    "private_seed_must_not_be_published": true,
+    "ephemeral_private_material_allowed_only_in_temporary_runtime": true,
+    "fixed_randomness_raw_bytes_must_not_be_committed": true,
+    "fixed_randomness_sha256_may_be_public": true,
+    "public_key_may_be_public": true,
+    "signature_may_be_public": true,
+    "message_or_message_sha256_may_be_public": true,
+    "deterministic_test_seed_is_production_secret": false,
+    "deterministic_test_seed_is_public_non_secret_fixture": true,
+    "deterministic_test_seed_raw_bytes_must_not_be_committed": true,
+    "deterministic_test_seed_raw_bytes_must_not_be_published": true,
+    "deterministic_test_seed_sha256_may_be_public": true,
+    "deterministic_test_seed_derivation_label_may_be_public": true
+  },
+  "required_public_evidence": {
+    "algorithm": "ML-DSA-65",
+    "circl_version": "v1.6.5",
+    "public_key_sha256": true,
+    "message_sha256": true,
+    "fixed_randomness_sha256": true,
+    "signature_sha256": true,
+    "repeat_signature_byte_equality": true,
+    "circl_verification": true,
+    "openssl_verification": true,
+    "private_material_present": false,
+    "external_mu_tested": false,
+    "test_seed_sha256": true,
+    "context_sha256": true,
+    "cross_execution_public_key_byte_equality": true,
+    "cross_execution_signature_byte_equality": true,
+    "canonical_fixture_hashes_exact": true
+  },
+  "success_contract": {
+    "decision": "mldsa65_deterministic_fixed_randomness_cross_implementation_verified",
+    "required": {
+      "algorithm_exact": true,
+      "fixed_randomness_control_confirmed": true,
+      "repeat_signature_byte_equality": true,
+      "circl_signature_verification": true,
+      "openssl_signature_verification": true,
+      "stage392_immutable": true,
+      "private_material_not_published": true,
+      "external_mu_claimed": false,
+      "deterministic_non_secret_test_seed": true,
+      "cross_execution_public_key_byte_equality": true,
+      "cross_execution_signature_byte_equality": true,
+      "canonical_fixture_hashes_exact": true,
+      "raw_test_seed_not_persisted": true,
+      "raw_fixed_randomness_not_persisted": true
+    }
+  },
+  "fail_closed": {
+    "wrong_algorithm": "block",
+    "stage392_modified": "block",
+    "circl_version_mismatch": "block",
+    "fixed_randomness_not_controlled": "block",
+    "repeat_signature_mismatch": "block",
+    "circl_verification_failure": "block",
+    "openssl_verification_failure": "block",
+    "private_key_or_seed_persisted": "block",
+    "raw_fixed_randomness_persisted": "block",
+    "external_mu_claim_attempt": "block",
+    "deterministic_test_seed_mismatch": "block",
+    "canonical_public_key_hash_mismatch": "block",
+    "canonical_signature_hash_mismatch": "block",
+    "canonical_message_hash_mismatch": "block",
+    "canonical_context_hash_mismatch": "block",
+    "canonical_test_seed_hash_mismatch": "block",
+    "canonical_fixed_randomness_hash_mismatch": "block",
+    "cross_execution_public_key_mismatch": "block",
+    "cross_execution_signature_mismatch": "block",
+    "raw_test_seed_persisted": "block"
+  },
+  "non_guarantees": {
+    "formal_certification": false,
+    "entire_system_quantum_safe": false,
+    "production_signing_api_validation": false,
+    "openssl_fixed_randomness_signing": false,
+    "external_mu_conformance": false,
+    "ml_dsa_44_conformance": false,
+    "ml_dsa_87_conformance": false,
+    "production_key_material_security_from_test_fixture": false,
+    "test_fixture_seed_secrecy": false,
+    "production_signing_randomness_validation": false
+  },
+  "implementation_state": {
+    "executable_implementation_created": false,
+    "tests_executed": false,
+    "canonical_result_created": false,
+    "commit_created": false,
+    "push_performed": false
+  },
+  "contract_revision": 2,
+  "canonical_test_fixture": {
+    "classification": "public_non_secret_deterministic_test_fixture",
+    "algorithm": "ML-DSA-65",
+    "circl_version": "v1.6.5",
+    "key_derivation_api": "NewKeyFromSeed",
+    "test_seed_derivation_label": "QSP Stage393 public non-secret deterministic test key v1",
+    "fixed_randomness_derivation_label": "QSP Stage393 fixed-randomness probe v1",
+    "message_utf8": "QSP Stage393 ML-DSA-65 fixed-randomness probe",
+    "context_utf8": "QSP-Stage393",
+    "seed_size": 32,
+    "raw_public_key_size": 1952,
+    "signature_size": 3309,
+    "expected_sha256": {
+      "public_key": "4b6344efa2eac5ef445c8e2e3b9a40f0f99898cd014b101b2564af5914b74dbb",
+      "signature": "3541d38f63c430d07e130c7597bafed7bf6d82bf64fee6e216761dc58c14c231",
+      "message": "5eb05bcca245aeed44ac509eebebf6dfc3d6f8ca6df3bd904a3f2ef61e55108b",
+      "context": "235c15e32ba5fb5fe35be31d1fe62a4608509b87db79d1889065e773128878ac",
+      "test_seed": "e6cd07175fba11ec6c98597a3fd82e73de3d13096e4a050e51e651468414dfe6",
+      "fixed_randomness": "d9c98c32e905f4c26047488561ff4f731e0fcdc4aa76ecb85a2471280be94d7d"
+    }
+  },
+  "amendment_record": {
+    "reason": "Stage393 Step 5-F1 experimentally verified byte-identical ML-DSA-65 public keys and signatures across separate executions using a deterministic public non-secret runtime test seed and fixed signing randomness.",
+    "step": "Stage393 Step 5-F2",
+    "implementation_started": false,
+    "commit_created": false,
+    "push_performed": false
+  }
+}
