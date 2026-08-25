@@ -1,0 +1,355 @@
+{
+  "base_binding": {
+    "stage392_anchor_commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+    "stage392_must_remain_immutable": true,
+    "stage393_publication_checkpoint": "f15a3c170fc1eed4242d0338175641f103fad423"
+  },
+  "claim_boundary": {
+    "all_1138_vectors_verified_before_execution": false,
+    "circl_production_fixed_randomness_api": false,
+    "circl_public_external_mu_api": false,
+    "entire_system_quantum_safe": false,
+    "external_assessment_completed": false,
+    "fips_140_module_validation": false,
+    "formal_certification": false,
+    "production_randomness_validation": false,
+    "stage393_final_acceptance_before_execution": false
+  },
+  "execution_lanes": {
+    "sign_external_mu_deterministic": {
+      "algorithm_counts": {
+        "ML-DSA-44": 15,
+        "ML-DSA-65": 27,
+        "ML-DSA-87": 27
+      },
+      "circl_required": true,
+      "count": 69,
+      "mu_size_bytes": 64,
+      "openssl_required": true,
+      "rnd_semantics": "32 zero bytes",
+      "success_rule": "The 64-byte vector mu must be consumed as already-computed mu and must not be hashed again as message input. Both implementations must independently produce the exact expected signature and verify under External-Mu semantics.",
+      "unsupported_counts_as_verified": false
+    },
+    "sign_message_context_deterministic": {
+      "algorithm_counts": {
+        "ML-DSA-44": 142,
+        "ML-DSA-65": 154,
+        "ML-DSA-87": 136
+      },
+      "circl_required": true,
+      "count": 432,
+      "invalid_vector_rule": "The invalid key/context condition must be rejected; unsupported is not a pass.",
+      "openssl_required": true,
+      "rnd_semantics": "32 zero bytes",
+      "valid_vector_rule": "Both implementations must independently produce the exact expected signature bytes and verify the produced signature."
+    },
+    "sign_message_context_randomized_fixed_rnd": {
+      "algorithm_counts": {
+        "ML-DSA-44": 2,
+        "ML-DSA-65": 2,
+        "ML-DSA-87": 2
+      },
+      "circl_required": true,
+      "count": 6,
+      "openssl_required": true,
+      "rnd_semantics": "Use the exact 32-byte non-zero rnd from the vector",
+      "success_rule": "Both implementations must independently produce the exact expected signature bytes using the supplied test randomness and verify it."
+    },
+    "verify_message_context": {
+      "algorithm_counts": {
+        "ML-DSA-44": 180,
+        "ML-DSA-65": 210,
+        "ML-DSA-87": 241
+      },
+      "circl_required": true,
+      "count": 631,
+      "openssl_required": true,
+      "success_rule": "Each implementation must independently accept valid signatures and reject invalid signatures exactly as Wycheproof specifies."
+    }
+  },
+  "fail_closed": {
+    "cross_implementation_disagreement": "block",
+    "derived_public_key_mismatch": "block",
+    "external_mu_rehashed": "block",
+    "fixed_randomness_not_controlled": "block",
+    "input_hash_mismatch": "block",
+    "invalid_vector_accepted": "block",
+    "private_material_persisted": "block",
+    "signature_byte_mismatch": "block",
+    "stage392_modified": "block",
+    "stage393_checkpoint_modified": "block",
+    "unexpected_exception": "block",
+    "valid_vector_rejected": "block",
+    "vector_skipped": "block",
+    "vector_unsupported": "block",
+    "verify_result_mismatch": "block",
+    "wrong_circl_commit": "block",
+    "wrong_openssl_commit": "block",
+    "wrong_wycheproof_commit": "block"
+  },
+  "final_success_requirements": {
+    "circl_executed_vector_count": 1138,
+    "circl_skipped_vector_count": 0,
+    "circl_unsupported_vector_count": 0,
+    "cross_implementation_mismatch_count": 0,
+    "external_mu_vector_count": 69,
+    "invalid_expected": 431,
+    "key_derivation_mismatch_count": 0,
+    "openssl_executed_vector_count": 1138,
+    "openssl_skipped_vector_count": 0,
+    "openssl_unsupported_vector_count": 0,
+    "previous_stage393_checkpoint_immutable": true,
+    "private_material_persisted": false,
+    "randomized_fixed_rnd_vector_count": 6,
+    "sign_vector_count": 507,
+    "signature_byte_mismatch_count": 0,
+    "stage392_immutable": true,
+    "success_decision": "full_wycheproof_mldsa_1138_dual_implementation_verified",
+    "valid_expected": 707,
+    "verification_mismatch_count": 0,
+    "verify_vector_count": 631,
+    "wycheproof_file_count": 9,
+    "wycheproof_vector_count": 1138
+  },
+  "implementation_pins": {
+    "circl": {
+      "commit": "cfa7c70defd831ffb0792ab2af560bfef43d60ca",
+      "external_mu_requirement": "A distinct test-only package-local helper must consume precomputed mu directly. Passing mu to unsafeSignInternal as ordinary message input is forbidden because that would rehash mu.",
+      "fixed_randomness_classification": "test_only_internal_compatibility_path",
+      "production_fixed_randomness_api_claimed": false,
+      "public_external_mu_api_claimed": false,
+      "repository": "cloudflare/circl",
+      "roles": [
+        "verify_executor",
+        "seed_key_derivation_executor",
+        "expanded_private_key_executor",
+        "deterministic_sign_executor",
+        "fixed_randomness_sign_executor",
+        "external_mu_test_executor"
+      ],
+      "standard_message_path": "Construct the FIPS 204 Pure ML-DSA M' = 0x00 || len(ctx) || ctx || msg before the package-local Sign_internal compatibility path.",
+      "tag": "v1.6.5"
+    },
+    "openssl": {
+      "commit": "aae016bfd52fcad2bc9657c2c782cfdf73b1ed5f",
+      "repository": "openssl/openssl",
+      "required_test_parameters": {
+        "context_string": "Use the exact context where context is present and valid",
+        "deterministic": "Use deterministic mode / zero per-message randomness where rnd is absent",
+        "mu": "Use External-Mu mode for the 69 mu-only vectors",
+        "test_entropy": "Use the exact 32-byte vector rnd where rnd is present"
+      },
+      "roles": [
+        "verify_executor",
+        "seed_key_derivation_executor",
+        "expanded_private_key_executor",
+        "deterministic_sign_executor",
+        "fixed_randomness_sign_executor",
+        "external_mu_executor"
+      ],
+      "tag": "openssl-3.6.3"
+    }
+  },
+  "implementation_state": {
+    "all_1138_vectors_executed": false,
+    "canonical_full_result_created": false,
+    "circl_full_harness_created": false,
+    "commit_created": false,
+    "final_acceptance": false,
+    "full_runner_created": false,
+    "openssl_full_harness_created": false,
+    "push_performed": false
+  },
+  "japanese_name": "完全Wycheproof ML-DSA 二実装適合検証ゲート",
+  "key_semantics": {
+    "public_key_sizes": {
+      "ML-DSA-44": 1312,
+      "ML-DSA-65": 1952,
+      "ML-DSA-87": 2592
+    },
+    "sign_noseed": {
+      "count": 220,
+      "invalid": 15,
+      "private_key_sizes": {
+        "ML-DSA-44": 2560,
+        "ML-DSA-65": 4032,
+        "ML-DSA-87": 4896
+      },
+      "rule": "Import the exact semi-expanded FIPS 204 private key bytes. Invalid key length/content must not be treated as unsupported success.",
+      "valid": 205
+    },
+    "sign_seed": {
+      "count": 287,
+      "invalid": 12,
+      "invalid_seed_lengths_expected": [
+        0,
+        31,
+        33
+      ],
+      "rule": "For valid vectors derive the keypair from the exact privateSeed and compare the derived public key whenever the vector supplies one.",
+      "seed_size_bytes": 32,
+      "valid": 275
+    },
+    "signature_sizes": {
+      "ML-DSA-44": 2420,
+      "ML-DSA-65": 3309,
+      "ML-DSA-87": 4627
+    }
+  },
+  "mu_semantics": {
+    "computed_mu_check": "When msg/context and vector mu are both available and the context is valid, any implementation path that exposes computed mu must compare it with the vector mu.",
+    "external_mu_must_not_be_rehashed": true,
+    "message_based_vectors_with_mu_available": 417,
+    "mu_only_internal_vectors": 69,
+    "mu_size_bytes": 64
+  },
+  "name": "Complete Wycheproof ML-DSA Dual-Implementation Conformance Gate",
+  "population": {
+    "acceptable": 0,
+    "by_algorithm": {
+      "ML-DSA-44": 339,
+      "ML-DSA-65": 393,
+      "ML-DSA-87": 406
+    },
+    "file_count": 9,
+    "invalid": 431,
+    "sign": {
+      "by_algorithm": {
+        "ML-DSA-44": 159,
+        "ML-DSA-65": 183,
+        "ML-DSA-87": 165
+      },
+      "expanded_private_key_vectors": 220,
+      "explicit_rnd_nonzero_vectors": 6,
+      "explicit_rnd_vectors": 6,
+      "external_mu_deterministic": 69,
+      "external_mu_only_total": 69,
+      "internal_flag_vectors": 69,
+      "invalid": 27,
+      "message_context_deterministic": 432,
+      "message_context_randomized_fixed_rnd": 6,
+      "message_context_total": 438,
+      "no_rnd_property_vectors": 501,
+      "seed_key_vectors": 287,
+      "total": 507,
+      "valid": 480
+    },
+    "total_vectors": 1138,
+    "valid": 707,
+    "verify": {
+      "by_algorithm": {
+        "ML-DSA-44": 180,
+        "ML-DSA-65": 210,
+        "ML-DSA-87": 241
+      },
+      "invalid": 404,
+      "total": 631,
+      "valid": 227
+    }
+  },
+  "private_material_boundary": {
+    "generated_private_keys_must_be_runtime_temporary": true,
+    "generated_private_keys_must_not_be_committed": true,
+    "generated_private_keys_must_not_be_published": true,
+    "raw_test_vector_private_material_committed_to_qsp": false,
+    "raw_test_vector_private_material_published_by_qsp": false,
+    "runtime_temporary_directories_must_be_cleaned": true,
+    "vector_files_must_be_runtime_temporary": true,
+    "wycheproof_expanded_private_key_is_public_test_vector_data": true,
+    "wycheproof_private_seed_is_public_test_vector_data": true
+  },
+  "schema": "qsp.stage393.full-wycheproof-execution-contract.v1",
+  "source_stage": 392,
+  "stage": 393,
+  "status": "contract_frozen_preimplementation",
+  "wycheproof": {
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "input_files": [
+      {
+        "algorithm": "ML-DSA-44",
+        "file": "mldsa_44_verify_test.json",
+        "invalid": 103,
+        "kind": "verify",
+        "sha256": "0ca1b5df4575263e29b31fae7569a3da41df9a3b6fee56720a992d0cd1153b68",
+        "total": 180,
+        "valid": 77
+      },
+      {
+        "algorithm": "ML-DSA-44",
+        "file": "mldsa_44_sign_seed_test.json",
+        "invalid": 4,
+        "kind": "sign_seed",
+        "sha256": "b29b0dcca2e52c988e1b9c06f8b521889ffbaadfc6a9dbf52f0f0f8f4c5b6b92",
+        "total": 86,
+        "valid": 82
+      },
+      {
+        "algorithm": "ML-DSA-44",
+        "file": "mldsa_44_sign_noseed_test.json",
+        "invalid": 5,
+        "kind": "sign_noseed",
+        "sha256": "ee55e18b1944db496b2539d3884dfacc04a96db21bcec239063df5e4cd1ee6cb",
+        "total": 73,
+        "valid": 68
+      },
+      {
+        "algorithm": "ML-DSA-65",
+        "file": "mldsa_65_verify_test.json",
+        "invalid": 131,
+        "kind": "verify",
+        "sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02",
+        "total": 210,
+        "valid": 79
+      },
+      {
+        "algorithm": "ML-DSA-65",
+        "file": "mldsa_65_sign_seed_test.json",
+        "invalid": 4,
+        "kind": "sign_seed",
+        "sha256": "d72e9c2f514c9f7490c33785ae0027d942ba2c45a9b8ebfc8fb1802b4913bf38",
+        "total": 105,
+        "valid": 101
+      },
+      {
+        "algorithm": "ML-DSA-65",
+        "file": "mldsa_65_sign_noseed_test.json",
+        "invalid": 5,
+        "kind": "sign_noseed",
+        "sha256": "8587a53e7e3ca20b006b661316b89c762acdecf3fa902746b01cbc09fe14130d",
+        "total": 78,
+        "valid": 73
+      },
+      {
+        "algorithm": "ML-DSA-87",
+        "file": "mldsa_87_verify_test.json",
+        "invalid": 170,
+        "kind": "verify",
+        "sha256": "e9e04216d4217265a5affba2568476d35742dbd8ffc9d4c23b3441334a08a224",
+        "total": 241,
+        "valid": 71
+      },
+      {
+        "algorithm": "ML-DSA-87",
+        "file": "mldsa_87_sign_seed_test.json",
+        "invalid": 4,
+        "kind": "sign_seed",
+        "sha256": "e83c292318134faa6af777e86c619c4643e2705dba91dfa5adcd1fddfd4f40ce",
+        "total": 96,
+        "valid": 92
+      },
+      {
+        "algorithm": "ML-DSA-87",
+        "file": "mldsa_87_sign_noseed_test.json",
+        "invalid": 5,
+        "kind": "sign_noseed",
+        "sha256": "bd4c997f1fb90d985dbcca9a5ab52cef1f5c22d2cc0ba332d8dbe68703a5b40d",
+        "total": 69,
+        "valid": 64
+      }
+    ],
+    "repository": "C2SP/wycheproof",
+    "semantic_guide": "doc/mldsa.md",
+    "semantic_guide_git_blob": "cbda9e06abf3f2c43c1a50e11e0d05b2534faf68",
+    "vector_directory": "testvectors_v1"
+  }
+}

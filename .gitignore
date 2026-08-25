@@ -639,3 +639,7 @@ development/stage393/*
 # Stage393 canonical public execution evidence
 !development/stage393/stage393_execution_result.json
 !development/stage393/stage393_execution_result.sha256
+
+# Stage393 full Wycheproof execution contract
+!development/stage393/stage393_full_wycheproof_execution_contract.json
+!development/stage393/stage393_full_wycheproof_execution_contract.sha256
