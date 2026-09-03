@@ -1,0 +1,50 @@
+{
+  "bindings": {
+    "base_diagnostic_manifest_sha256": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e",
+    "circl_full_harness_sha256": "60eb0cf69888ffe8244a90affc3400717d67c0fc49c182291d53902026955e80",
+    "contract_sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "diagnostic_summary_sha256": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e",
+    "dual_runner_sha256": "1b9baf39bd35a91ad86b165507a2f6b4a5789a56bb272cdc0cca8f953ece536e",
+    "openssl_full_harness_sha256": "a1e694858be45521290c00043386dafae4ecd00434e406746ee4fc18e494fa14",
+    "openssl_full_probe_sha256": "1b4ccc7aade8a75ba4e286967f1bc6045edc9eb6d94a9402961298869fce4a58",
+    "overlay_generator_sha256": "cb57f79ab1059cda2fcf4471eee9f8b3cd88c31f384680ad7c21d9bffb6ed169",
+    "qsp_head": "06c215016b0b2e056f0ffd46fbbc2aeae5452e37",
+    "result_adjudication_sha256": "c4f70d0456c4f566882e518c11092dce9ecd9ddbacc7314584d35995c2391fd7"
+  },
+  "claim_boundary": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "entire_system_quantum_safe": false,
+    "fips204_nonconformance_confirmed": false,
+    "formal_certification": false,
+    "secret_key_recovery_demonstrated": false,
+    "security_vulnerability_confirmed": false
+  },
+  "conformance_gate_satisfied": false,
+  "decision": "local_evidence_frozen_non_acceptance",
+  "execution_integrity_verified": true,
+  "frozen_result": {
+    "circl_execution_count": 1138,
+    "circl_wycheproof_mismatch_count": 6,
+    "cross_implementation_mismatch_count": 9,
+    "key_derivation_mismatch_count": 0,
+    "known_full_length_private_key_semantic_range_difference_count": 6,
+    "openssl_execution_count": 1138,
+    "openssl_wycheproof_mismatch_count": 3,
+    "semantic_behavior_mismatch_count": 9,
+    "signature_byte_mismatch_count": 0,
+    "total_cryptographic_execution_count": 2276,
+    "unclassified_cross_mismatch_count": 0,
+    "verification_mismatch_count": 0,
+    "wycheproof_vector_count": 1138,
+    "zero_length_private_seed_handling_difference_count": 3
+  },
+  "publication": {
+    "committed": false,
+    "published": false,
+    "pushed": false,
+    "staged": false
+  },
+  "schema": "qsp.stage393.full-1138-evidence-freeze-manifest.v1",
+  "stage": 393,
+  "stage393_final_acceptance": false
+}

@@ -643,3 +643,66 @@ development/stage393/*
 # Stage393 full Wycheproof execution contract
 !development/stage393/stage393_full_wycheproof_execution_contract.json
 !development/stage393/stage393_full_wycheproof_execution_contract.sha256
+
+# Stage393 CIRCL test-only External-Mu overlay generator
+!development/stage393/generate_stage393_circl_external_mu_overlay.py
+
+# Stage393 CIRCL full Wycheproof harness source
+!development/stage393/stage393_circl_full_harness.go
+
+# Stage393 CIRCL canary vector selection evidence
+!development/stage393/stage393_circl_canary_selection.json
+!development/stage393/stage393_circl_canary_selection.sha256
+
+# Stage393 CIRCL canary execution evidence
+!development/stage393/stage393_circl_canary_execution_evidence.json
+!development/stage393/stage393_circl_canary_execution_evidence.sha256
+
+# Stage393 CIRCL semantic invalid private-key finding
+!development/stage393/stage393_circl_semantic_invalid_private_key_finding.json
+!development/stage393/stage393_circl_semantic_invalid_private_key_finding.sha256
+
+# BEGIN STAGE393 D2K-4E-P1 PUBLICATION CORE ALLOWLIST
+# Stage393 full 1,138-vector publication preparation.
+# Canary/preflight evidence remains local-only.
+development/stage393/stage393_circl_canary_execution_evidence.json
+development/stage393/stage393_circl_canary_execution_evidence.sha256
+development/stage393/stage393_circl_canary_selection.json
+development/stage393/stage393_circl_canary_selection.sha256
+development/stage393/stage393_circl_semantic_invalid_private_key_finding.json
+development/stage393/stage393_circl_semantic_invalid_private_key_finding.sha256
+# Exact reproducibility source allowlist.
+!development/stage393/generate_stage393_circl_external_mu_overlay.py
+!development/stage393/stage393_circl_full_harness.go
+!development/stage393/stage393_openssl_full_probe.c
+!development/stage393/stage393_openssl_full_harness.py
+!development/stage393/run_stage393_full_dual_implementation.py
+# Exact frozen-evidence directory allowlist.
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/manifest.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/manifest.sha256
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_noseed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_noseed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_seed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_seed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_verify_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_verify_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_noseed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_noseed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_seed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_seed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_verify_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_verify_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_noseed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_noseed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_seed_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_seed_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_verify_test.json.circl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_verify_test.json.openssl.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_evidence_freeze_manifest.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_evidence_freeze_manifest.sha256
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_result_adjudication.json
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_result_adjudication.sha256
+!development/stage393/stage393_full_1138_dual_diagnostic_evidence/summary.json
+# END STAGE393 D2K-4E-P1 PUBLICATION CORE ALLOWLIST

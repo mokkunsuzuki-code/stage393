@@ -1,0 +1,342 @@
+{
+  "adjudication_boundary": {
+    "cross_implementation_difference_is_not_automatically_a_standard_violation": true,
+    "execution_integrity_and_conformance_are_separate_claims": true,
+    "observed_behavior_does_not_by_itself_establish_security_impact": true,
+    "zero_length_seed_internal_openssl_acceptance_reason_established": false
+  },
+  "claim_boundary": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "conformance_gate_satisfied": false,
+    "entire_system_quantum_safe": false,
+    "external_assessment_completed": false,
+    "fips204_nonconformance_confirmed": false,
+    "formal_certification": false,
+    "secret_key_recovery_demonstrated": false,
+    "security_vulnerability_confirmed": false,
+    "stage393_final_acceptance": false
+  },
+  "conformance_characterization": {
+    "circl_wycheproof_mismatch_count": 6,
+    "cross_implementation_mismatch_count": 9,
+    "full_length_private_key_semantic_range_validation_difference_count": 6,
+    "key_derivation_mismatch_count": 0,
+    "openssl_wycheproof_mismatch_count": 3,
+    "semantic_behavior_mismatch_count": 9,
+    "signature_byte_mismatch_count": 0,
+    "unclassified_cross_mismatch_count": 0,
+    "verification_mismatch_count": 0,
+    "zero_length_private_seed_handling_difference_count": 3
+  },
+  "decision": "full_execution_complete_conformance_gate_not_satisfied",
+  "execution": {
+    "circl_execution_count": 1138,
+    "execution_integrity_verified": true,
+    "openssl_execution_count": 1138,
+    "runtime_error_count": 0,
+    "skipped_vector_count": 0,
+    "total_cryptographic_execution_count": 2276,
+    "unsupported_vector_count": 0,
+    "wycheproof_vector_count": 1138
+  },
+  "freeze_status": "adjudicated_local_evidence_ready_for_freeze",
+  "mismatches": [
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-44",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 2560,
+        "public_key_length": 1312
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_44_sign_noseed_test.json",
+      "source_group_index": 3,
+      "tcId": 52,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s1 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-44",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 2560,
+        "public_key_length": 1312
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_44_sign_noseed_test.json",
+      "source_group_index": 4,
+      "tcId": 53,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s2 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof explicitly supplies an empty privateSeed and marks the case invalid with IncorrectPrivateKeyLength; CIRCL rejected the signing path while the OpenSSL 3.6.3 QSP probe path accepted it.",
+      "algorithm": "ML-DSA-44",
+      "attribution_boundary": "The observed accept/reject difference is confirmed. The internal reason OpenSSL accepted the zero-length seed is not established by this evidence.",
+      "circl_observed_result": "reject",
+      "classification": "zero_length_private_seed_handling_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_seed",
+      "openssl_observed_result": "accept",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 0,
+        "private_key_pkcs8_length": 0,
+        "private_seed_length": 0,
+        "public_key": "null"
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_44_sign_seed_test.json",
+      "source_group_index": 21,
+      "tcId": 84,
+      "verification_mismatch": false,
+      "wycheproof_comment": "empty private seed",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "IncorrectPrivateKeyLength"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-65",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 4032,
+        "public_key_length": 1952
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_65_sign_noseed_test.json",
+      "source_group_index": 3,
+      "tcId": 56,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s1 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-65",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 4032,
+        "public_key_length": 1952
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_65_sign_noseed_test.json",
+      "source_group_index": 4,
+      "tcId": 57,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s2 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof explicitly supplies an empty privateSeed and marks the case invalid with IncorrectPrivateKeyLength; CIRCL rejected the signing path while the OpenSSL 3.6.3 QSP probe path accepted it.",
+      "algorithm": "ML-DSA-65",
+      "attribution_boundary": "The observed accept/reject difference is confirmed. The internal reason OpenSSL accepted the zero-length seed is not established by this evidence.",
+      "circl_observed_result": "reject",
+      "classification": "zero_length_private_seed_handling_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_seed",
+      "openssl_observed_result": "accept",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 0,
+        "private_key_pkcs8_length": 0,
+        "private_seed_length": 0,
+        "public_key": "null"
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_65_sign_seed_test.json",
+      "source_group_index": 23,
+      "tcId": 91,
+      "verification_mismatch": false,
+      "wycheproof_comment": "empty private seed",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "IncorrectPrivateKeyLength"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-87",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 4896,
+        "public_key_length": 2592
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_87_sign_noseed_test.json",
+      "source_group_index": 3,
+      "tcId": 47,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s1 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof marks the full-length private key invalid because an s1 or s2 vector is out of range; CIRCL accepted the signing path while OpenSSL rejected it.",
+      "algorithm": "ML-DSA-87",
+      "circl_observed_result": "accept",
+      "classification": "full_length_private_key_semantic_range_validation_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_noseed",
+      "openssl_observed_result": "reject",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 11,
+        "mu_length": 64,
+        "private_key_length": 4896,
+        "public_key_length": 2592
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_87_sign_noseed_test.json",
+      "source_group_index": 4,
+      "tcId": 48,
+      "verification_mismatch": false,
+      "wycheproof_comment": "private key with s2 vector out of range",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "InvalidPrivateKey"
+      ]
+    },
+    {
+      "adjudicated_observation": "Wycheproof explicitly supplies an empty privateSeed and marks the case invalid with IncorrectPrivateKeyLength; CIRCL rejected the signing path while the OpenSSL 3.6.3 QSP probe path accepted it.",
+      "algorithm": "ML-DSA-87",
+      "attribution_boundary": "The observed accept/reject difference is confirmed. The internal reason OpenSSL accepted the zero-length seed is not established by this evidence.",
+      "circl_observed_result": "reject",
+      "classification": "zero_length_private_seed_handling_difference",
+      "fips204_nonconformance_confirmed": false,
+      "implementation_bug_confirmed": false,
+      "key_derivation_mismatch": false,
+      "kind": "sign_seed",
+      "openssl_observed_result": "accept",
+      "safe_input_shape": {
+        "expected_signature_length": 0,
+        "message_length": 0,
+        "private_key_pkcs8_length": 0,
+        "private_seed_length": 0,
+        "public_key": "null"
+      },
+      "secret_key_recovery_demonstrated": false,
+      "security_vulnerability_confirmed": false,
+      "semantic_behavior_difference": true,
+      "signature_byte_mismatch": false,
+      "source_file": "mldsa_87_sign_seed_test.json",
+      "source_group_index": 23,
+      "tcId": 82,
+      "verification_mismatch": false,
+      "wycheproof_comment": "empty private seed",
+      "wycheproof_expected_result": "invalid",
+      "wycheproof_flags": [
+        "IncorrectPrivateKeyLength"
+      ]
+    }
+  ],
+  "purpose": "full_wycheproof_dual_implementation_result_adjudication",
+  "schema": "qsp.stage393.full-1138-result-adjudication.v1",
+  "source_bindings": {
+    "base_diagnostic_manifest_sha256": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e",
+    "circl_full_harness_sha256": "60eb0cf69888ffe8244a90affc3400717d67c0fc49c182291d53902026955e80",
+    "contract_sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "diagnostic_summary_sha256": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e",
+    "dual_runner_sha256": "1b9baf39bd35a91ad86b165507a2f6b4a5789a56bb272cdc0cca8f953ece536e",
+    "openssl_full_harness_sha256": "a1e694858be45521290c00043386dafae4ecd00434e406746ee4fc18e494fa14",
+    "openssl_full_probe_sha256": "1b4ccc7aade8a75ba4e286967f1bc6045edc9eb6d94a9402961298869fce4a58",
+    "overlay_generator_sha256": "cb57f79ab1059cda2fcf4471eee9f8b3cd88c31f384680ad7c21d9bffb6ed169",
+    "qsp_head": "06c215016b0b2e056f0ffd46fbbc2aeae5452e37",
+    "wycheproof_commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166"
+  },
+  "stage": 393
+}
