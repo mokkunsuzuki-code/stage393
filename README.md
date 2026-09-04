@@ -1,5 +1,38 @@
 <!-- STAGE393_PQCA_FRONTDOOR_START -->
 
+<!-- QSP_AUTHORITATIVE_CURRENT_STATUS_NOTICE_START -->
+
+> [!IMPORTANT]
+> **Authoritative current Stage389 timestamp status**
+>
+> The authoritative Stage389 2-of-2 finalization is complete:
+>
+> - `decision = authoritative_independent_assessment_package_dual_timestamp_verified`
+> - `dual_timestamp_verified = true`
+> - `verified_proof_count = 2`
+> - `rfc3161_verified = true`
+> - `opentimestamps_verified = true`
+> - `bitcoin_block_header_attestation_present = true`
+> - `timestamp_complete = true`
+>
+> Any later text in this README that says `dual_timestamp_pending`,
+> `opentimestamps_verified = false`, or equivalent is retained only as an
+> **append-only historical snapshot**. It MUST NOT be interpreted as the
+> current authoritative Stage389 state.
+
+> Authoritative lineage source: `development/stage393/authoritative-rebind/stage393_authoritative_upstream_binding.json`
+
+> The full Stage393 Wycheproof diagnostic evidence snapshot remains frozen separately and is not rewritten by this documentation correction:
+>
+> - evidence commit: `2bc09de5115016809083659d70608c54eadee6a6`
+> - evidence tree: `cd0e52f3eadafb3b0ca4fa94edf289512d3bfd37`
+> - Publication Core fingerprint: `66670a3e21aca7d77e60cd529e760b786734227a2e79dfa991510ad9e3380a9d`
+> - cross-implementation semantic differences: `9`
+> - `conformance_gate_satisfied = false`
+> - `stage393_final_acceptance = false`
+
+<!-- QSP_AUTHORITATIVE_CURRENT_STATUS_NOTICE_END -->
+
 # QSP Stage393
 
 ## PQC Readiness Evidence Execution Context, Input/Output Contract & External Review Handoff
