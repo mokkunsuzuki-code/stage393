@@ -1,0 +1,41 @@
+{
+  "assumptions": {
+    "cross_implementation_agreement": "Agreement between implementations increases evidence but does not by itself prove specification conformance.",
+    "cross_implementation_disagreement": "A mismatch is evidence of behavioral difference. It is not automatically proof of a vulnerability, implementation bug, or standards violation.",
+    "environment": "Runtime and environment metadata are required when behavior can materially depend on them.",
+    "hash_function": "SHA-256 is used as the primary file-integrity binding in the current evidence model.",
+    "implementation_version": "Version strings alone may be insufficient when different builds or providers can change behavior.",
+    "source_revision": "A source commit is meaningful only when the repository identity is also known.",
+    "test_vectors": "Passing a finite test-vector corpus is scoped evidence and not a formal proof of full algorithm correctness."
+  },
+  "external_review_question": "Which of these fields should be required, optional, or tracker-specific for PQC readiness across heterogeneous software packages and hardware?",
+  "fields_that_may_need_domain_specific_extension": [
+    "package ecosystem identity",
+    "binary build provenance",
+    "provider or module selection",
+    "protocol and handshake configuration",
+    "key lifecycle and rotation policy",
+    "hardware model and firmware identity",
+    "HSM or accelerator configuration",
+    "dependency and transitive dependency context",
+    "migration policy and readiness classification criteria"
+  ],
+  "known_limitations": [
+    "The model does not automatically discover every cryptographic asset in an arbitrary package.",
+    "The model does not define a universal PQC readiness taxonomy for all software and hardware.",
+    "The model does not replace CBOM, SBOM, package inventory, or readiness-tracker records.",
+    "The model does not infer formal certification from reproducible execution evidence.",
+    "The model does not prove that an entire dependency graph or deployment is quantum safe.",
+    "Independent reproduction requires a genuinely independent reviewer and environment; self-runs are not relabeled as independent assessment."
+  ],
+  "schema": "qsp.stage393.pqc-readiness-assumptions-and-scope.v1",
+  "scope_rules": [
+    "A verified cryptographic behavior is evidence for that declared behavior and target only.",
+    "Algorithm support alone does not establish package, product, deployment, or system-wide PQC readiness.",
+    "A package-level readiness classification may require inventory, dependency, protocol, configuration, key-management, deployment, and migration context outside the cryptographic execution.",
+    "Hardware-backed claims may require firmware, device, provider, accelerator, or HSM identity in addition to software identity.",
+    "Unknown optional metadata is represented explicitly rather than guessed.",
+    "Missing required immutable identity or evidence binding fails closed."
+  ],
+  "stage": 393
+}

@@ -1,0 +1,98 @@
+{
+  "current_stage393_mode": {
+    "current_context_addition_performs_new_cryptographic_execution": false,
+    "historical_cryptographic_execution_completed": true,
+    "prior_closed_authority_commit": "5fe905740711b100280ab491ea377529042e89c7",
+    "prior_closed_authority_tree": "ecc9a7679c10d408829a3a34ba27c9af7bddb1e0"
+  },
+  "execution_modes": {
+    "cryptographic_execution": "Execute the scoped test or verifier against pinned implementations and evidence.",
+    "evidence_only_reverification": "Re-hash and re-evaluate frozen evidence without performing new cryptographic execution.",
+    "external_review_handoff": "Provide the contracts, assumptions, outputs, and evidence bindings required for an outside reviewer to evaluate the model."
+  },
+  "execution_phases": [
+    {
+      "action": "Identify the package, repository, artifact, firmware, hardware-backed component, or cryptographic implementation whose readiness claim is being assessed.",
+      "name": "target_selection",
+      "order": 1
+    },
+    {
+      "action": "Bind the target and all evidence to immutable source revisions and/or cryptographic digests.",
+      "name": "immutable_identity_binding",
+      "order": 2
+    },
+    {
+      "action": "Verify hashes and expected identities before execution.",
+      "name": "input_integrity_verification",
+      "order": 3
+    },
+    {
+      "action": "Record the runtime, implementation versions or commits, provider/module context, and execution environment needed to interpret the result.",
+      "name": "environment_capture",
+      "order": 4
+    },
+    {
+      "action": "Execute the declared verification profile or reverify previously frozen evidence.",
+      "name": "scoped_execution",
+      "order": 5
+    },
+    {
+      "action": "Generate machine-readable normalized results with deterministic field semantics.",
+      "name": "canonical_result_generation",
+      "order": 6
+    },
+    {
+      "action": "Compare expected behavior, implementation behavior, and cross-implementation behavior without silently collapsing semantic differences.",
+      "name": "comparison_and_mismatch_classification",
+      "order": 7
+    },
+    {
+      "action": "Issue only the decision justified by the evidence; unresolved mismatches, missing bindings, or failed invariants prevent an acceptance claim.",
+      "name": "fail_closed_decision",
+      "order": 8
+    },
+    {
+      "action": "Publish only the safe evidence subset and preserve explicit non-claims and private-material boundaries.",
+      "name": "evidence_publication_or_handoff",
+      "order": 9
+    }
+  ],
+  "intended_runners": [
+    {
+      "independence_claim": false,
+      "purpose": "Reproduce and inspect evidence before publication.",
+      "runner_type": "developer_local"
+    },
+    {
+      "independence_claim": false,
+      "purpose": "Execute deterministic verification under an automated environment.",
+      "runner_type": "ci"
+    },
+    {
+      "independence_claim": "conditional_on_reviewer_identity_and_environment",
+      "purpose": "Re-run the same verifier and compare results without relying on the original developer's conclusion.",
+      "runner_type": "independent_reviewer"
+    }
+  ],
+  "non_claims": {
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "pqca_adoption": false,
+    "pqca_endorsement": false
+  },
+  "purpose": "Define how QSP is run, by whom, against what target, and how reproducible evidence is produced for external PQC readiness review.",
+  "schema": "qsp.stage393.pqc-readiness-tool-execution-context.v1",
+  "stage": 393,
+  "title": "PQC Readiness Evidence Execution Context",
+  "tool_role": {
+    "description": "QSP binds a scoped PQC readiness claim to immutable target identity, evidence identity, implementation identity, execution context, machine-readable results, and fail-closed decision semantics.",
+    "is_cbom_generator": false,
+    "is_formal_certification_system": false,
+    "is_inventory_scanner": false,
+    "is_package_readiness_tracker": false,
+    "is_security_vulnerability_scanner": false,
+    "may_consume_inventory_or_cbom_metadata": true,
+    "primary_role": "verification_and_evidence_binding_layer"
+  }
+}

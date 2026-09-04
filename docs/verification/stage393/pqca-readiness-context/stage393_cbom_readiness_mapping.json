@@ -1,0 +1,75 @@
+{
+  "integration_pattern": [
+    "Inventory/CBOM identifies the component or cryptographic asset.",
+    "A readiness tracker states a scoped readiness claim or status.",
+    "QSP binds the target and claim to immutable evidence and implementation identities.",
+    "QSP executes or reverifies the declared evidence profile.",
+    "QSP emits reproducible result, mismatch, scope, assumptions, and non-claims.",
+    "The tracker or reviewer decides how that evidence affects its readiness classification."
+  ],
+  "loose_classification_compatibility": {
+    "fixed_universal_package_taxonomy_required": false,
+    "minimal_reproducibility_contract_required": true,
+    "silent_inference_allowed": false,
+    "tracker_specific_metadata_allowed": true,
+    "unknown_optional_fields_allowed": true
+  },
+  "possible_mapping": [
+    {
+      "examples": [
+        "package name",
+        "package version",
+        "PURL",
+        "bom-ref"
+      ],
+      "external_field": "component identity",
+      "qsp_destination": "target_identity.optional_context"
+    },
+    {
+      "examples": [
+        "ML-DSA",
+        "signature primitive",
+        "provider/module reference"
+      ],
+      "external_field": "cryptographic asset or algorithm",
+      "qsp_destination": "cryptographic_scope"
+    },
+    {
+      "examples": [
+        "library version",
+        "source commit",
+        "binary digest"
+      ],
+      "external_field": "implementation identity",
+      "qsp_destination": "implementation_identity"
+    },
+    {
+      "examples": [
+        "CBOM evidence reference",
+        "attestation",
+        "test-vector source",
+        "build provenance"
+      ],
+      "external_field": "evidence or provenance reference",
+      "qsp_destination": "evidence_identity"
+    },
+    {
+      "examples": [
+        "tracker status",
+        "migration status"
+      ],
+      "external_field": "readiness classification",
+      "qsp_destination": "readiness_tracker_context",
+      "rule": "QSP preserves the tracker classification as external context and does not silently convert it into a cryptographic verification decision."
+    }
+  ],
+  "relationship": {
+    "qsp_can_consume_cbom_or_inventory_metadata": true,
+    "qsp_generates_cbom": false,
+    "qsp_replaces_cbom": false,
+    "qsp_requires_one_specific_cbom_schema": false,
+    "qsp_role": "Bind externally supplied inventory/readiness context to executable and reproducible verification evidence."
+  },
+  "schema": "qsp.stage393.cbom-readiness-mapping.v1",
+  "stage": 393
+}

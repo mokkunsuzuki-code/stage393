@@ -1,3 +1,132 @@
+<!-- STAGE393_PQCA_FRONTDOOR_START -->
+
+# QSP Stage393
+
+## PQC Readiness Evidence Execution Context, Input/Output Contract & External Review Handoff
+
+**PQC準備性証拠・実行コンテキスト／入出力契約／外部レビュー引渡しレイヤー**
+
+Stage393 now exposes not only the completed cryptographic evidence, but also the execution model needed for an external reviewer to understand how QSP is intended to be used.
+
+QSP's role is deliberately narrow:
+
+Tool role: `verification_and_evidence_binding_layer`
+
+**PQC readiness claim → immutable target/evidence binding → scoped execution or reverification → machine-readable result → mismatch classification → fail-closed decision → external review evidence**
+
+QSP is **not** a universal inventory scanner, CBOM generator, PQC readiness tracker, certification system, or automatic system-wide quantum-safety classifier.
+
+### How the tool is run
+
+Supported review contexts:
+
+- developer/local reproduction
+- CI execution
+- independent reviewer reproduction
+
+Execution model:
+
+1. select the target and scoped claim
+2. bind target, implementation, and evidence to immutable revisions or digests
+3. verify input hashes
+4. capture material runtime/environment context
+5. perform scoped cryptographic execution or evidence-only reverification
+6. generate canonical machine-readable output
+7. compare expected and cross-implementation behavior
+8. classify mismatches
+9. fail closed when the evidence does not justify acceptance
+
+### Minimum inputs
+
+Required for reproducible evidence:
+
+- immutable target identity
+- scoped PQC readiness claim
+- algorithm/primitive and behavior under test
+- implementation identity
+- evidence identity and hash/revision
+- execution profile and decision policy
+- runtime/environment identity when material
+
+Optional context can include:
+
+- package name/version/ecosystem
+- PURL / CPE / bom-ref
+- CBOM cryptographic-asset references
+- hardware model / firmware identity
+- SBOM/build provenance/attestation references
+- readiness-tracker status
+
+Unknown optional values are explicit and are not guessed.
+
+### Machine-readable outputs
+
+The output contract covers:
+
+- target and claim identity
+- implementation/evidence bindings
+- environment
+- execution counts/errors/skips
+- expected and cross-implementation mismatches
+- decision and verification status
+- assumptions and known limitations
+- explicit non-claims
+
+### Completed Stage393 example
+
+Historical Stage393 evidence remains unchanged:
+
+- Wycheproof ML-DSA target vectors: `1138`
+- CIRCL executed vectors: `1138`
+- OpenSSL executed vectors: `1138`
+- total cryptographic executions: `2276`
+- CIRCL Wycheproof mismatches: `6`
+- OpenSSL Wycheproof mismatches: `3`
+- cross-implementation mismatches: `9`
+- semantic behavior mismatches: `9`
+- all 1138 vectors verified: `false`
+- Stage393 final acceptance: `false`
+
+The nine observed differences are preserved as evidence.
+
+They are **not** automatically classified as:
+
+- confirmed FIPS 204 nonconformance
+- confirmed implementation bug
+- confirmed security vulnerability
+
+### CBOM / readiness relationship
+
+QSP does not replace CBOM or readiness tracking.
+
+A useful integration model is:
+
+`CBOM / inventory → readiness claim → QSP evidence binding → reproducible verification → reviewer/tracker classification`
+
+This allows package, PURL, bom-ref, hardware, firmware, and provenance metadata to remain as flexible external context while keeping the minimum reproducibility fields fixed.
+
+### External review package
+
+Public review page:
+
+https://mokkunsuzuki-code.github.io/stage393/verification/stage393/pqca-readiness-context/
+
+The package contains:
+
+- tool execution context
+- input contract
+- output contract
+- assumptions and scope
+- CBOM/readiness mapping
+- concrete Stage393 example
+- external review handoff
+
+No PQCA endorsement, adoption, acceptance, certification, or completed external assessment is claimed.
+
+The previously closed Stage393 cryptographic authority is preserved unchanged. This documentation/interface completion performs no new cryptographic execution.
+
+<!-- STAGE393_PQCA_FRONTDOOR_END -->
+
 <!-- STAGE392_WYCHEPROOF_FRONTDOOR_START -->
 
 # QSP Stage392

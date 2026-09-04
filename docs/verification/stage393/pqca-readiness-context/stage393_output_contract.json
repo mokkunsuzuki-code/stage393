@@ -1,0 +1,96 @@
+{
+  "canonicalization": {
+    "hashable_output": true,
+    "machine_readable_json": true,
+    "silent_field_reinterpretation_allowed": false,
+    "stable_field_semantics": true
+  },
+  "output_purpose": "Produce a machine-readable evidence record that an external reviewer can trace back to the exact target, claim, implementations, evidence, environment, execution, mismatches, and decision boundary.",
+  "readiness_tracker_relationship": {
+    "output_can_support_a_readiness_tracker_record": true,
+    "output_is_itself_a_universal_readiness_classification": false,
+    "tracker_remains_responsible_for_its_own_classification_policy": true
+  },
+  "recommended_decision_states": [
+    {
+      "meaning": "The declared scope and policy conditions were satisfied. This is not a system-wide quantum-safety claim.",
+      "state": "verified_scoped_evidence"
+    },
+    {
+      "meaning": "Execution completed but evidence, mismatches, or policy conditions do not justify acceptance.",
+      "state": "non_acceptance"
+    },
+    {
+      "meaning": "Evidence exists but the available information is insufficient to support either acceptance or a definitive negative conclusion.",
+      "state": "inconclusive"
+    },
+    {
+      "meaning": "Required identities, hashes, environment bindings, or execution prerequisites were missing or invalid.",
+      "state": "blocked"
+    }
+  ],
+  "required_output_groups": {
+    "claim": [
+      "claim_identifier",
+      "scope"
+    ],
+    "comparison_result": [
+      "expected_behavior_mismatch_count",
+      "cross_implementation_mismatch_count",
+      "semantic_behavior_mismatch_count"
+    ],
+    "cryptographic_scope": [
+      "algorithm_or_primitive",
+      "operation_or_behavior_under_test"
+    ],
+    "decision": [
+      "decision",
+      "verification_status",
+      "fail_closed"
+    ],
+    "environment": [
+      "runtime_or_toolchain_identity"
+    ],
+    "evidence_bindings": [
+      "evidence_type",
+      "immutable_revision_or_digest"
+    ],
+    "execution_result": [
+      "executed",
+      "execution_count",
+      "runtime_error_count",
+      "skipped_count",
+      "unsupported_count"
+    ],
+    "implementation_bindings": [
+      "implementation_name",
+      "immutable_version_commit_or_digest"
+    ],
+    "non_claims": [
+      "formal_certification",
+      "entire_system_quantum_safe",
+      "external_assessment_completed"
+    ],
+    "run_identity": [
+      "run_identifier",
+      "execution_mode"
+    ],
+    "schema_and_tool": [
+      "schema",
+      "tool_name",
+      "tool_version_or_commit"
+    ],
+    "scope_and_assumptions": [
+      "verified_scope",
+      "assumptions",
+      "known_limitations"
+    ],
+    "target": [
+      "target_type",
+      "target_locator",
+      "identity_binding"
+    ]
+  },
+  "schema": "qsp.stage393.pqc-readiness-output-contract.v1",
+  "stage": 393
+}

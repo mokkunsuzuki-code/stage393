@@ -1,0 +1,123 @@
+{
+  "design_principle": "Require only the fields needed to reproduce or independently interpret the scoped verification. Package, hardware, CBOM, and readiness-classification metadata remain optional context unless required by the selected execution profile.",
+  "optional_context_fields": {
+    "cbom_context": [
+      "cbom_document_identifier",
+      "bom_ref",
+      "component_ref",
+      "cryptographic_asset_ref",
+      "evidence_source_ref"
+    ],
+    "hardware_context": [
+      "vendor",
+      "model",
+      "hardware_revision",
+      "firmware_version",
+      "firmware_digest",
+      "accelerator_or_hsm"
+    ],
+    "readiness_tracker_context": [
+      "tracker_record_identifier",
+      "tracker_classification",
+      "tracker_source_reference"
+    ],
+    "software_package_context": [
+      "package_name",
+      "package_version",
+      "package_ecosystem",
+      "purl",
+      "cpe",
+      "distribution"
+    ],
+    "supply_chain_context": [
+      "build_provenance",
+      "sbom_reference",
+      "attestation_reference",
+      "signing_identity",
+      "release_channel"
+    ]
+  },
+  "private_input_policy": {
+    "credentials_publication_allowed": false,
+    "raw_private_key_publication_allowed": false,
+    "secret_keys_required_for_public_evidence": false,
+    "sensitive_environment_secret_publication_allowed": false
+  },
+  "required_input_groups": {
+    "claim": {
+      "description": "The specific PQC readiness statement that the evidence is intended to support, contradict, or leave unresolved.",
+      "required_fields": [
+        "claim_identifier",
+        "claim_text_or_machine_readable_assertion",
+        "scope"
+      ]
+    },
+    "cryptographic_scope": {
+      "description": "The cryptographic behavior being evaluated. A readiness claim is never inferred solely from an algorithm name.",
+      "required_fields": [
+        "algorithm_or_primitive",
+        "operation_or_behavior_under_test"
+      ]
+    },
+    "environment": {
+      "conditionally_required_fields": [
+        "os",
+        "architecture",
+        "provider_or_module",
+        "build_options",
+        "hardware_or_accelerator_context"
+      ],
+      "required_fields": [
+        "runtime_or_toolchain_identity"
+      ],
+      "rule": "Environment fields become required whenever they can materially change interpretation or reproducibility."
+    },
+    "evidence_identity": {
+      "description": "Test vectors, manifests, signatures, public keys, attestations, or other evidence consumed by the verifier.",
+      "required_fields": [
+        "evidence_type",
+        "evidence_locator",
+        "immutable_revision_or_digest",
+        "sha256_when_file_based"
+      ]
+    },
+    "execution_profile": {
+      "required_fields": [
+        "profile_identifier",
+        "expected_execution_mode",
+        "acceptance_or_non_acceptance_policy"
+      ]
+    },
+    "implementation_identity": {
+      "description": "One or more concrete implementations used by the selected execution profile.",
+      "required_fields": [
+        "implementation_name",
+        "immutable_version_commit_or_digest"
+      ]
+    },
+    "target_identity": {
+      "description": "An immutable or independently verifiable identity for the thing being assessed.",
+      "identity_binding_allowed_forms": [
+        "source_repository_plus_exact_commit",
+        "package_artifact_plus_sha256",
+        "binary_artifact_plus_sha256",
+        "firmware_image_plus_sha256",
+        "container_image_plus_digest",
+        "hardware_model_plus_firmware_or_software_binding"
+      ],
+      "required_fields": [
+        "target_type",
+        "target_locator",
+        "identity_binding"
+      ]
+    }
+  },
+  "schema": "qsp.stage393.pqc-readiness-input-contract.v1",
+  "stage": 393,
+  "unknown_value_policy": {
+    "effect": "Missing optional context does not automatically fail a cryptographic execution, but missing required identity or evidence bindings fail closed.",
+    "representation": "null_or_explicit_unknown_with_reason",
+    "silent_guessing_allowed": false,
+    "unknown_values_allowed": true
+  }
+}

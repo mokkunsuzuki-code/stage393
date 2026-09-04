@@ -1,0 +1,69 @@
+{
+  "adjudication_boundary": {
+    "confirmed_fips204_nonconformance": false,
+    "confirmed_implementation_bug": false,
+    "confirmed_security_vulnerability": false,
+    "secret_key_recovery_demonstrated": false
+  },
+  "claim_under_test": {
+    "description": "Whether the complete selected Wycheproof ML-DSA population can be treated as verified across the pinned OpenSSL and CIRCL execution paths under the Stage393 policy.",
+    "scope": "Wycheproof ML-DSA test-vector execution and cross-implementation diagnostic comparison only."
+  },
+  "comparison": {
+    "circl_wycheproof_mismatch_count": 6,
+    "cross_implementation_mismatch_count": 9,
+    "key_derivation_mismatch_count": 0,
+    "openssl_wycheproof_mismatch_count": 3,
+    "semantic_behavior_mismatch_count": 9,
+    "signature_byte_mismatch_count": 0,
+    "unclassified_cross_mismatch_count": 0,
+    "verification_mismatch_count": 0
+  },
+  "decision": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "authoritative_decision": "authoritative_stage393_non_acceptance_lineage_reverified",
+    "historical_diagnostic_decision": "dual_implementation_diagnostic_execution_complete_with_mismatches",
+    "stage393_final_acceptance": false
+  },
+  "example_type": "completed_historical_dual_implementation_diagnostic_execution",
+  "execution": {
+    "circl_executed_vector_count": 1138,
+    "circl_runtime_error_count": 0,
+    "circl_skipped_vector_count": 0,
+    "circl_unsupported_vector_count": 0,
+    "openssl_executed_vector_count": 1138,
+    "openssl_runtime_error_count": 0,
+    "openssl_skipped_vector_count": 0,
+    "openssl_unsupported_vector_count": 0,
+    "total_cryptographic_execution_count": 2276
+  },
+  "inputs": {
+    "execution_contract_sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "implementations": [
+      {
+        "commit": "aae016bfd52fcad2bc9657c2c782cfdf73b1ed5f",
+        "name": "OpenSSL"
+      },
+      {
+        "commit": "cfa7c70defd831ffb0792ab2af560bfef43d60ca",
+        "name": "Cloudflare CIRCL"
+      }
+    ],
+    "wycheproof": {
+      "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+      "repository": "C2SP/wycheproof",
+      "target_vector_count": 1138,
+      "vector_file_count": 9
+    }
+  },
+  "new_cryptographic_execution_performed_by_context_package": false,
+  "prior_closed_authority": {
+    "commit": "5fe905740711b100280ab491ea377529042e89c7",
+    "manifest_sha256": "be6dba1f9d2507c5f55ba942ee3dd6d92af30a4f69d1c3fe81ac86800246efcf",
+    "result_sha256": "ddfad469dcd980f195b5b5042bd9fc5fa2085ed8d974f0f9df80660ae30b1026",
+    "tree": "ecc9a7679c10d408829a3a34ba27c9af7bddb1e0"
+  },
+  "schema": "qsp.stage393.pqc-readiness-concrete-example.v1",
+  "stage": 393,
+  "why_this_example_matters_for_readiness": "The example shows that QSP preserves completed execution, implementation identity, mismatch counts, and non-acceptance without converting observed behavioral differences into unsupported vulnerability, conformance, certification, or system-wide readiness claims."
+}

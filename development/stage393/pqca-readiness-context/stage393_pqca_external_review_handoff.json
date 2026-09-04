@@ -1,0 +1,61 @@
+{
+  "external_discussion": {
+    "issue": 41,
+    "organization": "Post-Quantum Cryptography Alliance",
+    "purpose": "Provide the execution context, inputs, outputs, assumptions, and CBOM/readiness relationship needed for meaningful external feedback.",
+    "working_group_repository": "PQCA/wg-readiness-tracking"
+  },
+  "frontdoor_before_completion": {
+    "docs_index_sha256": "f386a01c7f186985e3d1f96e047d0c6f9a2910c48a092cb2f11c57d228c496bc",
+    "readme_sha256": "16329a6528be493289980c4ba17c2c36a7b10fe66a3940fb976eb76721cf21fc"
+  },
+  "historical_authority_preservation": {
+    "cryptographic_result_rewritten": false,
+    "new_cryptographic_execution_performed": false,
+    "prior_closed_stage393_commit": "5fe905740711b100280ab491ea377529042e89c7",
+    "prior_closed_stage393_tree": "ecc9a7679c10d408829a3a34ba27c9af7bddb1e0"
+  },
+  "non_claims": {
+    "external_assessment_completed": false,
+    "formal_certification": false,
+    "pqca_acceptance": false,
+    "pqca_adoption": false,
+    "pqca_endorsement": false
+  },
+  "questions_this_package_is_designed_to_answer": [
+    {
+      "answer_artifact": "stage393_tool_execution_context.json",
+      "question": "How is the tool envisioned to be run?"
+    },
+    {
+      "answer_artifact": "stage393_input_contract.json",
+      "question": "What are the inputs?"
+    },
+    {
+      "answer_artifact": "stage393_output_contract.json",
+      "question": "What are the outputs?"
+    },
+    {
+      "answer_artifact": "stage393_assumptions_and_scope.json",
+      "question": "What assumptions or fields may be missing?"
+    },
+    {
+      "answer_artifact": "stage393_cbom_readiness_mapping.json",
+      "question": "How does this relate to CBOM or looser readiness tracking?"
+    },
+    {
+      "answer_artifact": "stage393_concrete_example.json",
+      "question": "What does one completed run actually look like?"
+    }
+  ],
+  "requested_external_feedback": [
+    "Is the minimal immutable target/evidence binding technically meaningful for PQC readiness evidence?",
+    "Which input fields should be mandatory across packages and hardware, and which should remain tracker-specific or optional?",
+    "Is the separation between inventory/readiness classification and reproducible verification evidence appropriate?",
+    "Which CBOM/PURL/component identifiers are most useful to carry into the target identity?",
+    "Which environment, build, provider, firmware, or hardware assumptions should be promoted from optional to required?",
+    "Is the output sufficient for an independent reviewer to reproduce the evidence without adopting QSP's policy terminology?"
+  ],
+  "schema": "qsp.stage393.pqca-external-review-handoff.v1",
+  "stage": 393
+}
