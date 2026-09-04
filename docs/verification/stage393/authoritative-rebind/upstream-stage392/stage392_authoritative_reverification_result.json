@@ -1,0 +1,59 @@
+{
+  "authoritative_stage391": {
+    "adjudication_result_sha256": "21367b5fc9a15b6bbdd7c76b39adabe86210a76b3dd90495097ac5c18e5fa98a",
+    "assessment_outcome": null,
+    "binding_verified": true,
+    "commit": "12f667cd7e0f917a2f93a9fd5d3ef981bf27b4a3",
+    "decision": "third_party_submission_pending",
+    "external_assessment_completed": false,
+    "independent_reproduction_completed": false,
+    "submission_present": false,
+    "verification_status": "waiting_for_external_submission"
+  },
+  "authoritative_upstream_binding_sha256": "40a855b8fa57a8ac202bbe5b9eb201a583735f128d8e5740128983a7a8d69c1f",
+  "critical_failure_count": 0,
+  "decision": "authoritative_stage392_wycheproof_lineage_reverified",
+  "downstream": {
+    "stage393_reverification_required": true
+  },
+  "historical_cryptographic_result_preserved": true,
+  "historical_cryptographic_result_rewritten": false,
+  "historical_snapshot_sha256": "347f29f2e6e9721168c7f195c1063cc040c7641751d9180c3269269890dddc36",
+  "historical_stage392_decision": "wycheproof_mldsa65_cross_implementation_verified",
+  "historical_stage392_verification_status": "verified",
+  "historical_wycheproof_result": {
+    "adapter_execution_errors": 0,
+    "algorithm": "ML-DSA-65",
+    "byte_for_byte_match": true,
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "cross_implementation_mismatches": 0,
+    "failed_vectors": 0,
+    "invalid_vectors": 131,
+    "passed_vectors": 210,
+    "repeat_execution_deterministic": true,
+    "total_vectors": 210,
+    "valid_vectors": 79,
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  },
+  "new_cryptographic_execution_performed": false,
+  "non_claims": {
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "pipeline_completed": false,
+    "system_wide_formal_acceptance": false,
+    "system_wide_public_release_allowed": false,
+    "wycheproof_is_formal_proof": false
+  },
+  "publication_status": "append_only_authoritative_rebind_prepared",
+  "schema": "qsp.stage392.authoritative-reverification-result.v1",
+  "source_stage": 391,
+  "stage": 392,
+  "upstream_chain": {
+    "stage389_dual_timestamp_verified": true,
+    "stage389_required_verified_proof_count": 2,
+    "stage389_verified_proof_count": 2,
+    "stage390_reverification_completed": true
+  },
+  "verification_status": "verified_authoritative_upstream_lineage"
+}

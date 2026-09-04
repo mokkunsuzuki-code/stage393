@@ -1,0 +1,63 @@
+{
+  "authoritative_artifacts": {
+    "historical_snapshot_sha256": "53916699cec8b87538e89c136dcc5c6799a2f5d3fc29804c66772bac1ca97e26",
+    "non_acceptance_reverification_result_sha256": "ddfad469dcd980f195b5b5042bd9fc5fa2085ed8d974f0f9df80660ae30b1026",
+    "public_status_sha256": "f20d72079b6623b74407618993e20564898d94a5e6b3343c1ba5cc13028665a1",
+    "upstream_binding_sha256": "c7423722f806b9c730570e1199fa0e93f7aff22b554175054c54fd6e501e06b2"
+  },
+  "authoritative_stage392": {
+    "binding_verified": true,
+    "closed": true,
+    "commit": "0c518ac813f972e82a83bac340ddcc2b4d0b7a38",
+    "tree": "fdb949418477a00f3860855a646874c33b2a6605"
+  },
+  "critical_failure_count": 0,
+  "decision": "authoritative_stage393_non_acceptance_lineage_reverified",
+  "downstream": {
+    "reverification_required": true
+  },
+  "frozen_non_acceptance": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "circl_execution_count": 1138,
+    "cross_implementation_mismatch_count": 9,
+    "openssl_execution_count": 1138,
+    "semantic_behavior_mismatch_count": 9,
+    "stage393_final_acceptance": false,
+    "total_cryptographic_execution_count": 2276,
+    "wycheproof_vector_count": 1138
+  },
+  "historical_evidence": {
+    "contract_sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "diagnostic_manifest_sha256": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e",
+    "evidence_freeze_manifest_sha256": "13f6f83dd858912891e870e03260103f0823faae60aa4d55ecec67241604d7c2",
+    "result_adjudication_sha256": "c4f70d0456c4f566882e518c11092dce9ecd9ddbacc7314584d35995c2391fd7",
+    "summary_sha256": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e"
+  },
+  "historical_stage393": {
+    "commit": "2bc09de5115016809083659d70608c54eadee6a6",
+    "preserved": true,
+    "rewritten": false,
+    "tree": "cd0e52f3eadafb3b0ca4fa94edf289512d3bfd37"
+  },
+  "non_claims": {
+    "confirmed_fips204_nonconformance": false,
+    "confirmed_implementation_bug": false,
+    "confirmed_security_vulnerability": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "pipeline_completed": false,
+    "system_wide_formal_acceptance": false,
+    "system_wide_public_release_allowed": false
+  },
+  "publication_boundary": {
+    "default_deny": true,
+    "private_material_publication_allowed": false,
+    "raw_test_vector_private_material_publication_allowed": false,
+    "raw_timestamp_proof_publication_allowed": false,
+    "secret_material_publication_allowed": false
+  },
+  "schema": "qsp.stage393.authoritative-rebind-manifest.v1",
+  "source_stage": 392,
+  "stage": 393
+}

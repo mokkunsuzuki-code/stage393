@@ -1,0 +1,61 @@
+{
+  "authoritative_stage391": {
+    "artifact_sha256": {
+      "adjudication_contract": "00ddbcb27362244c16a05ec2b065d203d8bbc1dbb34ead4ce1897a69f8c0f4b6",
+      "adjudication_result": "21367b5fc9a15b6bbdd7c76b39adabe86210a76b3dd90495097ac5c18e5fa98a",
+      "current_state": "7778ec6f314688734185a5ab100b7f769c503f0e65cddfa339207af474174e69",
+      "rebind_manifest": "bf74bed9d0fda3d39000bd1d8f867e800f6b22a9e27d79230d0a2f1faaaf1d38",
+      "submission_binding_policy": "a9846c6debaea516a0e0db80f9557ee713c3e0c54e6149fd01b6ec1c0b43a701",
+      "upstream_binding": "fa68ac817fedc94bc2e398ecab6bb6f280aa82717292ce1caff7ee8729c42491"
+    },
+    "assessment_outcome": null,
+    "commit": "12f667cd7e0f917a2f93a9fd5d3ef981bf27b4a3",
+    "decision": "third_party_submission_pending",
+    "external_assessment_completed": false,
+    "independent_reproduction_completed": false,
+    "stage389_dual_timestamp_verified": true,
+    "stage389_verified_proof_count": 2,
+    "stage390_reverification_completed": true,
+    "submission_present": false,
+    "tree": "1d4f09e9d53feb0c5d791f891a4bc862240f98f7",
+    "verification_status": "waiting_for_external_submission"
+  },
+  "historical_stage391_binding": {
+    "canonical_result_sha256": "ed644d11bd49f67f89cfda50364d619066b4da3a36bf1fb26b38e111b6092b23",
+    "commit": "a74b7f47f8caabf37a910ea9f4da2b87c0cd5f15",
+    "preserved": true,
+    "rewritten": false
+  },
+  "historical_stage392": {
+    "commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+    "decision": "wycheproof_mldsa65_cross_implementation_verified",
+    "preserved": true,
+    "rewritten": false,
+    "tree": "66f5ecedc9210a84b9f0b3ce49a6d328dde1f055"
+  },
+  "rebind_scope": {
+    "cryptographic_result_recomputed": false,
+    "historical_cryptographic_result_preserved": true,
+    "historical_stage391_binding_rewritten": false,
+    "upstream_trust_lineage_reverified": true
+  },
+  "schema": "qsp.stage392.authoritative-upstream-binding.v1",
+  "security_boundaries": {
+    "append_only": true,
+    "private_material_required": false,
+    "raw_timestamp_proof_publication_allowed": false,
+    "secret_material_publication_allowed": false
+  },
+  "source_stage": 391,
+  "stage": 392,
+  "wycheproof_binding_preserved": {
+    "algorithm": "ML-DSA-65",
+    "commit": "dac1dd4729fd1f8dd9e1e9f3dce51d783da6c166",
+    "expected_invalid_count": 131,
+    "expected_test_count": 210,
+    "expected_valid_count": 79,
+    "repository": "C2SP/wycheproof",
+    "vector_file": "testvectors_v1/mldsa_65_verify_test.json",
+    "vector_sha256": "49ac366d76115eab56b7116f10d06e288e6f23fe6cfb90b26bfb2d731a8d1e02"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "frozen_result": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "circl_execution_count": 1138,
+    "circl_wycheproof_mismatch_count": 6,
+    "cross_implementation_mismatch_count": 9,
+    "diagnostic_decision": "dual_implementation_diagnostic_execution_complete_with_mismatches",
+    "evidence_freeze_decision": "local_evidence_frozen_non_acceptance",
+    "key_derivation_mismatch_count": 0,
+    "openssl_execution_count": 1138,
+    "openssl_wycheproof_mismatch_count": 3,
+    "semantic_behavior_mismatch_count": 9,
+    "signature_byte_mismatch_count": 0,
+    "stage393_final_acceptance": false,
+    "total_cryptographic_execution_count": 2276,
+    "unclassified_cross_mismatch_count": 0,
+    "verification_mismatch_count": 0,
+    "wycheproof_vector_count": 1138
+  },
+  "frozen_stage393_evidence": {
+    "contract_sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "diagnostic_manifest_sha256": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e",
+    "evidence_freeze_manifest_sha256": "13f6f83dd858912891e870e03260103f0823faae60aa4d55ecec67241604d7c2",
+    "result_adjudication_sha256": "c4f70d0456c4f566882e518c11092dce9ecd9ddbacc7314584d35995c2391fd7",
+    "summary_sha256": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e"
+  },
+  "historical_stage392_binding": {
+    "commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+    "preserved": true,
+    "rewritten": false
+  },
+  "historical_stage393": {
+    "commit": "2bc09de5115016809083659d70608c54eadee6a6",
+    "gitignore_sha256": "9ba306200c1c358f1043d09c58c59f194236c47f86cf04da8df99912371f821a",
+    "parent": "06c215016b0b2e056f0ffd46fbbc2aeae5452e37",
+    "preserved": true,
+    "rewritten": false,
+    "tracked_stage393_file_count": 39,
+    "tracked_stage393_files": [
+      {
+        "path": "development/stage393/generate_stage393_circl_external_mu_overlay.py",
+        "sha256": "cb57f79ab1059cda2fcf4471eee9f8b3cd88c31f384680ad7c21d9bffb6ed169"
+      },
+      {
+        "path": "development/stage393/run_stage393_deterministic_fixedrnd.py",
+        "sha256": "b4b9fcbb66ae00b3564031bb2ade88c3cb7b686bbc702abe8f2422513d94d23b"
+      },
+      {
+        "path": "development/stage393/run_stage393_full_dual_implementation.py",
+        "sha256": "1b9baf39bd35a91ad86b165507a2f6b4a5789a56bb272cdc0cca8f953ece536e"
+      },
+      {
+        "path": "development/stage393/stage393_circl_fixedrnd_harness_test.go",
+        "sha256": "4becc8d265d0eb11d70f2cdb52b1f4c84e70f80bc71c1c4d6fe90894f1b0f734"
+      },
+      {
+        "path": "development/stage393/stage393_circl_full_harness.go",
+        "sha256": "60eb0cf69888ffe8244a90affc3400717d67c0fc49c182291d53902026955e80"
+      },
+      {
+        "path": "development/stage393/stage393_executable_contract.json",
+        "sha256": "76fe922c3fc01f34bd13af0392c68105fd51fb692adda6512fb431fafd9653b5"
+      },
+      {
+        "path": "development/stage393/stage393_executable_contract.sha256",
+        "sha256": "f3b1238060b174b5f035b68a3415ac03ffa54e5900cda9e3fddb9e323397099a"
+      },
+      {
+        "path": "development/stage393/stage393_execution_result.json",
+        "sha256": "08c1b393df05e2292d758df1a5bc5ac2aaed25e5c874626e391a538df4020a3f"
+      },
+      {
+        "path": "development/stage393/stage393_execution_result.sha256",
+        "sha256": "f80296bcd5ea1c4fb9158d42f0c9d7a38d8600d4ff5fc5fd950768ebca08ae03"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/manifest.json",
+        "sha256": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/manifest.sha256",
+        "sha256": "9fcc99a44bc5bb3761a38db344038f3362db8b1b5c9dd22c4c834a0494f74fe7"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_noseed_test.json.circl.json",
+        "sha256": "cb2d1605cdcd69a238ad7eea30b88aa7719217cf84befc28eb69dc108b737b62"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_noseed_test.json.openssl.json",
+        "sha256": "a78478f253e5a78d839b0235804c8563c137e290d3d19187121857899478d241"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_seed_test.json.circl.json",
+        "sha256": "47acb726df5d3a82cf7f8c1d6d867bc1c2db33410f79a70815cd5a41972146b3"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_sign_seed_test.json.openssl.json",
+        "sha256": "6816dec1b6cab818c45d69d8095ed4e20cd79122f29b2bd3fac3c66dd7a10fc6"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_verify_test.json.circl.json",
+        "sha256": "0e91118bee660b54659fa39f209115533c601430f6085f579b35d891b9578247"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_44_verify_test.json.openssl.json",
+        "sha256": "0c542e03d94a4359803792dbaa443473852ec8466fb995e85250e82ef57cbd9c"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_noseed_test.json.circl.json",
+        "sha256": "dbe6f4dd39ac1bf9fc8c47710cce66c037fafe66573f3fc2d3f56f8ba61705d3"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_noseed_test.json.openssl.json",
+        "sha256": "3dd7206c4ddd3d11dbcfe0493efb809d26837af04bee5d4e74819fc6b7ef29cd"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_seed_test.json.circl.json",
+        "sha256": "7e19896b9c3c844846c9f75d93773634692d5fcd5e71d35fe29fc6cf326db2d7"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_sign_seed_test.json.openssl.json",
+        "sha256": "50d303153bb12bf8335dfc551979e582373d9c819815d043047597de77ab9d3c"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_verify_test.json.circl.json",
+        "sha256": "5230199dfea3ce2b78b7a658ead76275bf781c21d1696acbdbe89421c64fbb19"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_65_verify_test.json.openssl.json",
+        "sha256": "da2759ef27e4cec471488cd0ad0e04efd04ff57fd192fd89d8f42716e04c84ba"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_noseed_test.json.circl.json",
+        "sha256": "3afe0cbd61e7500e9e04311332cc16f0a9e22d96d9a57d8b2914a4c3a4e86e95"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_noseed_test.json.openssl.json",
+        "sha256": "42c0aedc769de11f14767d7bc621720065b5cf2a46f5fa6f137165083fa7b0b8"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_seed_test.json.circl.json",
+        "sha256": "0b88bd2a85ad82d7bc58d0e6e3f432af051db88d4e2c825c8bb11939e39fd282"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_sign_seed_test.json.openssl.json",
+        "sha256": "2e4548067d6bc70ce93afd847802ff338d5df701502ea36cb4d3ef40b8d1347e"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_verify_test.json.circl.json",
+        "sha256": "8647b1039fc044ef26c88a244ff73b26d6e80a54d8c57baef66fce0e8c8ba285"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/results/mldsa_87_verify_test.json.openssl.json",
+        "sha256": "680aca5ab0425f8fc4bcf170ccd4270f168cfcebf6947c80b065759d78d45167"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_evidence_freeze_manifest.json",
+        "sha256": "13f6f83dd858912891e870e03260103f0823faae60aa4d55ecec67241604d7c2"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_evidence_freeze_manifest.sha256",
+        "sha256": "419c0824658021b6f636b16d3fb3ab5b0753f8c5aa3f37cfae39a0faa6286274"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_result_adjudication.json",
+        "sha256": "c4f70d0456c4f566882e518c11092dce9ecd9ddbacc7314584d35995c2391fd7"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/stage393_full_1138_result_adjudication.sha256",
+        "sha256": "c71d2dc2a262fb6a481242ca9adbaa8cf34d4ba5e7260f510233f181a92b1c47"
+      },
+      {
+        "path": "development/stage393/stage393_full_1138_dual_diagnostic_evidence/summary.json",
+        "sha256": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e"
+      },
+      {
+        "path": "development/stage393/stage393_full_wycheproof_execution_contract.json",
+        "sha256": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91"
+      },
+      {
+        "path": "development/stage393/stage393_full_wycheproof_execution_contract.sha256",
+        "sha256": "9cf3a07a3e01fc8456bf14eb70fb6e05d769bdc1c7966e5aaf3e98fc510a0d80"
+      },
+      {
+        "path": "development/stage393/stage393_openssl_full_harness.py",
+        "sha256": "a1e694858be45521290c00043386dafae4ecd00434e406746ee4fc18e494fa14"
+      },
+      {
+        "path": "development/stage393/stage393_openssl_full_probe.c",
+        "sha256": "1b4ccc7aade8a75ba4e286967f1bc6045edc9eb6d94a9402961298869fce4a58"
+      },
+      {
+        "path": "development/stage393/stage393_openssl_mldsa65_verifier.c",
+        "sha256": "ebfeb289cce8b67a253eef719c27a93c36ec7fdd80dfa3f1ac675a9a81928c37"
+      }
+    ],
+    "tree": "cd0e52f3eadafb3b0ca4fa94edf289512d3bfd37"
+  },
+  "purpose": "Freeze the completed Stage393 diagnostic non-acceptance evidence before append-only rebinding to the closed Stage392 authority.",
+  "schema": "qsp.stage393.authoritative-historical-snapshot.v1",
+  "stage": 393
+}

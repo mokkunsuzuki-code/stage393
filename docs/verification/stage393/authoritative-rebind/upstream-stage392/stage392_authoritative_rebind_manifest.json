@@ -1,0 +1,51 @@
+{
+  "authoritative_artifacts": {
+    "historical_snapshot_sha256": "347f29f2e6e9721168c7f195c1063cc040c7641751d9180c3269269890dddc36",
+    "public_status_sha256": "f02c73988ea86a9d6c9f846247ac61104e0ad3efcc9888148edf51651f468dad",
+    "reverification_result_sha256": "1b9942c7de34f71328c2302bd5902223c833c1607489e33b9f4247582a08d9e4",
+    "upstream_binding_sha256": "40a855b8fa57a8ac202bbe5b9eb201a583735f128d8e5740128983a7a8d69c1f"
+  },
+  "authoritative_stage391": {
+    "adjudication_result_sha256": "21367b5fc9a15b6bbdd7c76b39adabe86210a76b3dd90495097ac5c18e5fa98a",
+    "binding_verified": true,
+    "commit": "12f667cd7e0f917a2f93a9fd5d3ef981bf27b4a3",
+    "rebind_manifest_sha256": "bf74bed9d0fda3d39000bd1d8f867e800f6b22a9e27d79230d0a2f1faaaf1d38"
+  },
+  "critical_failure_count": 0,
+  "cryptographic_evidence": {
+    "algorithm": "ML-DSA-65",
+    "cross_implementation_mismatches": 0,
+    "historical_result_preserved": true,
+    "historical_result_rewritten": false,
+    "new_execution_performed": false,
+    "wycheproof_failed_vectors": 0,
+    "wycheproof_total_vectors": 210
+  },
+  "decision": "authoritative_stage392_wycheproof_lineage_reverified",
+  "downstream": {
+    "stage393_reverification_required": true
+  },
+  "historical_stage392": {
+    "commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+    "preserved": true,
+    "rewritten": false,
+    "tree": "66f5ecedc9210a84b9f0b3ce49a6d328dde1f055"
+  },
+  "non_claims": {
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "pipeline_completed": false,
+    "system_wide_formal_acceptance": false,
+    "system_wide_public_release_allowed": false
+  },
+  "publication_boundary": {
+    "default_deny": true,
+    "private_material_publication_allowed": false,
+    "raw_timestamp_proof_publication_allowed": false,
+    "secret_material_publication_allowed": false
+  },
+  "schema": "qsp.stage392.authoritative-rebind-manifest.v1",
+  "source_stage": 391,
+  "stage": 392
+}

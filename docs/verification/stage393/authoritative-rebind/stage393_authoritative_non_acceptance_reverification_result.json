@@ -1,0 +1,74 @@
+{
+  "adjudication_boundary": {
+    "confirmed_fips204_nonconformance": false,
+    "confirmed_implementation_bug": false,
+    "confirmed_security_vulnerability": false,
+    "secret_key_recovery_demonstrated": false,
+    "semantic_behavior_difference_count": 9
+  },
+  "authoritative_stage392": {
+    "binding_verified": true,
+    "closed": true,
+    "commit": "0c518ac813f972e82a83bac340ddcc2b4d0b7a38",
+    "rebind_manifest_sha256": "3c52157fbd88eb07138842348f0ed6b3935b95721e0c4da6e16e48b62a643606",
+    "reverification_result_sha256": "1b9942c7de34f71328c2302bd5902223c833c1607489e33b9f4247582a08d9e4",
+    "tree": "fdb949418477a00f3860855a646874c33b2a6605"
+  },
+  "critical_failure_count": 0,
+  "cryptographic_evidence": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "circl_executed_vector_count": 1138,
+    "circl_wycheproof_mismatch_count": 6,
+    "cross_implementation_mismatch_count": 9,
+    "historical_result_preserved": true,
+    "historical_result_rewritten": false,
+    "key_derivation_mismatch_count": 0,
+    "new_cryptographic_execution_performed": false,
+    "openssl_executed_vector_count": 1138,
+    "openssl_wycheproof_mismatch_count": 3,
+    "semantic_behavior_mismatch_count": 9,
+    "signature_byte_mismatch_count": 0,
+    "stage393_final_acceptance": false,
+    "total_cryptographic_execution_count": 2276,
+    "unclassified_cross_mismatch_count": 0,
+    "verification_mismatch_count": 0,
+    "wycheproof_vector_count": 1138
+  },
+  "decision": "authoritative_stage393_non_acceptance_lineage_reverified",
+  "downstream": {
+    "reverification_required": true
+  },
+  "frozen_evidence_sha256": {
+    "contract": "eef3469aea44dbf459a0a04236a751e81d92106c766c55cf46e09b085484da91",
+    "diagnostic_manifest": "de2c5cc9a8264028646fa1301296665727399d052c72c22ba61738c98766e31e",
+    "evidence_freeze_manifest": "13f6f83dd858912891e870e03260103f0823faae60aa4d55ecec67241604d7c2",
+    "result_adjudication": "c4f70d0456c4f566882e518c11092dce9ecd9ddbacc7314584d35995c2391fd7",
+    "summary": "feaa8e3cb3b77d61a5aaa3298827e808e7da855cd7064a89b18ca57ef003043e"
+  },
+  "historical_stage393": {
+    "commit": "2bc09de5115016809083659d70608c54eadee6a6",
+    "diagnostic_decision": "dual_implementation_diagnostic_execution_complete_with_mismatches",
+    "evidence_freeze_decision": "local_evidence_frozen_non_acceptance",
+    "preserved": true,
+    "rewritten": false,
+    "tree": "cd0e52f3eadafb3b0ca4fa94edf289512d3bfd37"
+  },
+  "non_claims": {
+    "all_1138_wycheproof_mldsa_vectors_verified": false,
+    "confirmed_fips204_nonconformance": false,
+    "confirmed_implementation_bug": false,
+    "confirmed_security_vulnerability": false,
+    "entire_system_quantum_safe": false,
+    "formal_certification": false,
+    "formal_external_assessment_completed": false,
+    "pipeline_completed": false,
+    "stage393_final_acceptance": false,
+    "system_wide_formal_acceptance": false,
+    "system_wide_public_release_allowed": false
+  },
+  "publication_status": "append_only_authoritative_rebind_prepared",
+  "schema": "qsp.stage393.authoritative-non-acceptance-reverification-result.v1",
+  "source_stage": 392,
+  "stage": 393,
+  "verification_status": "verified_non_acceptance_authoritative_upstream_lineage"
+}

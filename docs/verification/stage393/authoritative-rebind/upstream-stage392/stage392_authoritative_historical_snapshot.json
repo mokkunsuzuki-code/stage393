@@ -1,0 +1,96 @@
+{
+  "historical_stage392": {
+    "commit": "ab2552e5eb3f8701330608e3b74ee2b0396f966b",
+    "preserved": true,
+    "rewritten": false,
+    "tree": "66f5ecedc9210a84b9f0b3ce49a6d328dde1f055"
+  },
+  "purpose": "Freeze historical Stage392 evidence before append-only rebinding to the closed Stage391 authority.",
+  "schema": "qsp.stage392.authoritative-historical-snapshot.v1",
+  "source_stage": 391,
+  "stage": 392,
+  "tracked_stage392_file_count": 19,
+  "tracked_stage392_files": [
+    {
+      "path": "development/stage392/go.mod",
+      "sha256": "9128f225e19fc2af310d2306491baf5fce63710748b2a39c70f745c8218fa8ce"
+    },
+    {
+      "path": "development/stage392/go.sum",
+      "sha256": "e9ab34142da606013dab85c4728bbc48a7232f10a99ed6c097231cfafd133980"
+    },
+    {
+      "path": "development/stage392/run_stage392_wycheproof_mldsa65.py",
+      "sha256": "3a7faaa4a20526ea40a81c78590232ce39bf3fc66187dc0dc8bbf7e45eae206a"
+    },
+    {
+      "path": "development/stage392/stage392_adapter_contract.json",
+      "sha256": "a649897d1e6d00202a2ba79ffb766462e712c6bacc35d9c0344fd38ba0b8a62a"
+    },
+    {
+      "path": "development/stage392/stage392_circl_mldsa65_adapter.go",
+      "sha256": "a06fa8742fd78f84417e7f8a1cb75565eadab295c789bca0a2df40f22224b136"
+    },
+    {
+      "path": "development/stage392/stage392_evidence_manifest.json",
+      "sha256": "b1e976a9d1b0e1f7305144921a28ad7acff4d3adbe946c13d41b8ba9e2a82e71"
+    },
+    {
+      "path": "development/stage392/stage392_evidence_manifest.sha256",
+      "sha256": "80d41ebd51245ce78dc951edb5957c67b3bcedf7d93747ee7f6d81b64af67e77"
+    },
+    {
+      "path": "development/stage392/stage392_openssl_mldsa65_adapter.c",
+      "sha256": "1f0956a7213a62eb7099ba5791deb813c7d84edd7c8e8ee929d5becdda5bb334"
+    },
+    {
+      "path": "development/stage392/stage392_preimplementation_contract.json",
+      "sha256": "f6a8cbfd952992398feb51e06b7640b3cabd91b4718a2867495004518bf2e706"
+    },
+    {
+      "path": "development/stage392/stage392_reproduction_manifest.json",
+      "sha256": "8b0e1fe2cbec99d31d2e1a46296dd4d64f836bfa3e6954f43bac8baabd099d7a"
+    },
+    {
+      "path": "development/stage392/stage392_reproduction_manifest.sha256",
+      "sha256": "10cb4cedf9d42d83afdd35939ec852f02b07f8eba11ed2711f3d255760533753"
+    },
+    {
+      "path": "development/stage392/stage392_tooling_manifest.json",
+      "sha256": "8d4646ba5e6088281f53cd44198c849213dd3cd407bf234011b4e01fadcf324e"
+    },
+    {
+      "path": "development/stage392/stage392_tooling_manifest.sha256",
+      "sha256": "432362b73f6503852e46323a36e10cc8707f61b878112401b19cc019a6caae28"
+    },
+    {
+      "path": "development/stage392/stage392_verification_result.json",
+      "sha256": "c44ad9053429f8a8b36f6739af5982736abd98ea4860bddc3c0e1c216ca6633c"
+    },
+    {
+      "path": "development/stage392/stage392_verification_result.sha256",
+      "sha256": "3e3d046f62877d99b6c913996b5b89dceefe4441b14f8f9a9eeac201355728cf"
+    },
+    {
+      "path": "development/stage392/stage392_wycheproof_full_execution_result.json",
+      "sha256": "1d2b89faf072eb527c442b1057eeec443abb77375665bc51da34fda321f43314"
+    },
+    {
+      "path": "development/stage392/stage392_wycheproof_full_execution_result.sha256",
+      "sha256": "1c3977cddaa7ebb653f8ad5527541f0b78ede422ed8ee79a4124b3432970108b"
+    },
+    {
+      "path": "development/stage392/test_stage392_fail_closed.py",
+      "sha256": "bb30dbda1da488b1d34f6c7d03dec142da21d9e75b1ce2ceaf261ac44ba3b865"
+    },
+    {
+      "path": "development/stage392/verify_stage392_wycheproof.py",
+      "sha256": "8b0b5cb056b26b6777f7abfdd68ee2d1916c9500b53bda2f96e1715fd05df947"
+    }
+  ],
+  "workflow": {
+    "path": ".github/workflows/stage392-wycheproof-verification.yml",
+    "preserved": true,
+    "sha256": "322559ee8d3a98bd4289faa0b2f968d09ace15c04b784674a6293223e6b6aa73"
+  }
+}
